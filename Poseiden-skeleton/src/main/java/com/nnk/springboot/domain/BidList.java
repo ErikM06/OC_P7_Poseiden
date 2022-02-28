@@ -17,35 +17,37 @@ import java.sql.Timestamp;
 @ToString
 @EqualsAndHashCode
 public class BidList {
-	
-	 Integer BidListId;
-	 String account;
-	 String type;
-	 Double bidQuantity;
-	 Double askQuantity;
-	 Double bid;
-	 Double ask;
-	 String benchmark;
-	 Timestamp bidListDate;
-	 String commentary;
-	 String security;
-	 String status;
-	 String trader;
-	 String book;
-	 String creationName;
-	 Timestamp creationDate;
-	 String revisionName;
-	 Timestamp revisionDate;
-	 String dealName;
-	 String dealType;
-	 String sourceListId;
-	 String side;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	Integer BidListId;
+	String account;
+	String type;
+	Double bidQuantity;
+	Double askQuantity;
+	Double bid;
+	Double ask;
+	String benchmark;
+	Timestamp bidListDate;
+	String commentary;
+	String security;
+	String status;
+	String trader;
+	String book;
+	String creationName;
+	Timestamp creationDate;
+	String revisionName;
+	Timestamp revisionDate;
+	String dealName;
+	String dealType;
+	String sourceListId;
+	String side;
 
 	public BidList(Integer bidListId, String account, String type, Double bidQuantity, Double askQuantity, Double bid,
 			Double ask, String benchmark, Timestamp bidListDate, String commentary, String security, String status,
 			String trader, String book, String creationName, Timestamp creationDate, String revisionName,
 			Timestamp revisionDate, String dealName, String dealType, String sourceListId, String side) {
-		
+
 		this.BidListId = bidListId;
 		this.account = account;
 		this.type = type;

@@ -17,13 +17,15 @@ import java.sql.Timestamp;
 @ToString
 @EqualsAndHashCode
 public class Rating {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	String moodysRating;
 	String sandPRating;
 	String fitchRating;
 	Integer orderNumber;
-	
+
 	public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
 		super();
 		this.moodysRating = moodysRating;
@@ -31,6 +33,5 @@ public class Rating {
 		this.fitchRating = fitchRating;
 		this.orderNumber = orderNumber;
 	}
-
 
 }

@@ -17,7 +17,9 @@ import java.sql.Timestamp;
 @ToString
 @EqualsAndHashCode
 public class RuleName {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	String name;
 	String description;

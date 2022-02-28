@@ -18,6 +18,8 @@ import java.sql.Timestamp;
 @EqualsAndHashCode
 public class Trade {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer tradeId;
 	String account;
 	String type;
