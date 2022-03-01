@@ -6,7 +6,8 @@
 3. Thymeleaf
 4. Bootstrap v.4.3.1
 
-
+## Temp SetUp conf 
+With mvn active profile user : mvn clean package -P{@profile} to apply the @profile  to the app context
 ## Setup with Intellij IDE
 1. Create project from Initializr: File > New > project > Spring Initializr
 2. Add lib repository into pom.xml
