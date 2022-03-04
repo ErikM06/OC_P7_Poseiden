@@ -23,7 +23,7 @@ public class BidListService implements IBidList {
 		
 	}
 
-	@Override
+	
 	public BidList uptadeBid(Integer id, BidList bid) {
 		BidList bidToUpdate =bidListRepo.getById(id);
 		bidToUpdate.setAccount(bid.getAccount());
