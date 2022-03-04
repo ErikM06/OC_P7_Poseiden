@@ -8,7 +8,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SelectBeforeUpdate;
 
 import java.sql.Timestamp;
 
@@ -19,6 +21,8 @@ import java.sql.Timestamp;
 @Setter
 @ToString
 @EqualsAndHashCode
+@DynamicUpdate
+@SelectBeforeUpdate
 public class BidList {
 
 	@Id
@@ -28,7 +32,7 @@ public class BidList {
 	String account;
 	@NotBlank (message = "Type is mandatory")
 	String type;
-	@NotEmpty (message = "Quantity is required")
+	
 	Double bidQuantity;
 	Double askQuantity;
 	Double bid;

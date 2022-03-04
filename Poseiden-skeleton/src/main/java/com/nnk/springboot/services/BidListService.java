@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.Errors;
-
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.interfaces.IBidList;
 import com.nnk.springboot.repositories.BidListRepository;
@@ -19,16 +17,22 @@ public class BidListService implements IBidList {
 	public List<BidList> getAllBidList(){	
 		return bidListRepo.findAll();	
 	}
-
-	@Override
-	public BidList validateBid(BidList bid, Errors errors) {
+	
+	public BidList saveBid (BidList bid) {
+		return bidListRepo.save(bid);
 		
-		return null;
 	}
 
 	@Override
 	public BidList uptadeBid(Integer id, BidList bid) {
-		// TODO Auto-generated method stub
-		return null;
+		BidList bidToUpdate =bidListRepo.getById(id);
+		bidToUpdate.setAccount(bid.getAccount());
+		bidToUpdate.setType(bid.getType());
+		bidToUpdate.setAskQuantity(bid.getAskQuantity());
+		
+		return bidListRepo.save(bidToUpdate);
+	}
+	public void deleteBid (Integer id) {
+		bidListRepo.deleteById(id);
 	}
 }
