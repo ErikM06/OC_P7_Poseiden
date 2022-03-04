@@ -3,8 +3,9 @@ package com.nnk.springboot.repositories;
 import com.nnk.springboot.domain.BidList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(collectionResourceRel ="bidlist", path = "bidlist")
+@Repository
 public interface BidListRepository extends JpaRepository<BidList, Integer> {
 
 }

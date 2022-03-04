@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:th="http://www.thymeleaf.org">
+xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>Home</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+	<meta charset="utf-8"/>
+	<title>Home</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css" >
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
-	<div class="row">
-		<h2>Add New Bid</h2>
-	</div>
+		<div class="row">
+			<h2>Add New Bid</h2>
+		</div>
 
-	<div class="row">
-		<form action="#" th:action="@{/bidList/validate}" th:object="${bidList}" method="post" class="form-horizontal" style="width: 100%">
+		<div class="row">
+			<form action="#" th:action="@{/bidList/validate}" th:object="${bidList}" method="post" class="form-horizontal" style="width: 100%">
+				<input th:field="${account}" th:errorclass="fieldError"  id="account" name="account" placeholder="account">
+				<input th:field="${type}"  th:errorclass="fieldError" id="type" name="type" placeholder="type">
+				<input th:field="${bidQuantity}" th:errorclass="fieldError"   id="bidQuantity" name="bidQuantity" placeholder="bidQuantity">
+
 			<!--
 			TODO: Create a form to input the values of Bid, there are 2 buttons: Save data and Cancel to the list Bid
-			 -->
-		</form>
-	</div>
+		-->
+	</form>
+	<td>
+		<button name="Save" type="submit" value="1">Save</button>
+		<button name="Cancel" href="/bidList/list" value="2">Cancel</button>
+	</td>
+</div>
 
 </div>
 </body>
