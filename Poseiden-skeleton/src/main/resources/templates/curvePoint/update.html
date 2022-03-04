@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:th="http://www.thymeleaf.org">
+xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>Home</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+	<meta charset="utf-8"/>
+	<title>Home</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css" >
 </head>
 <body>
-<div class="container">
-	<div class="row">
-		<h2>Update CurvePoint</h2>
-	</div>
+	<div class="container">
+		<div class="row">
+			<h2>Update CurvePoint</h2>
+		</div>
 
-	<div class="row">
-		<form action="#" th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}" th:object="${curvePoint}" method="post" class="form-horizontal" style="width: 100%">
+		<div class="row">
+			<form action="#" th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}" th:object="${curvePoint}" method="post" class="form-horizontal" style="width: 100%">
+				<input th:field="*{curveId}" id="curveId" name="curveId" placeholder="curveId">
+				<p th:if="${#fields.hasErrors('curveId')}" th:errorclass="error" th:errors="*{curveId}" />
+				<input th:field="*{term}" id="term" name="term" placeholder="term">
+				
+				<input th:field="*{value}" th:errorclass="fieldError"   id="value" name="value" placeholder="value">
+				<td>
+					<button name="Save" class="btn" type="submit" >Save</button>
+					<button name="Cancel" class="btn" th:href="/bidList/list" >Cancel</button>
+				</td>
 			<!--
 			TODO: Create a form to edit the values of CurvePoint, there are 2 buttons: Update data and Cancel to the Curve Point
-			 -->
-		</form>
-	</div>
+		-->
+	</form>
+</div>
 
 </div>
 </body>

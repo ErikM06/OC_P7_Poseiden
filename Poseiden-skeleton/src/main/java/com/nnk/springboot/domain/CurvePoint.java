@@ -7,6 +7,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 import java.sql.Timestamp;
 
 @Entity
@@ -21,6 +23,7 @@ public class CurvePoint {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
+	@NotNull(message = "Must not be null")
 	Integer curveId;
 	Timestamp asOfDate;
 	Double term;
