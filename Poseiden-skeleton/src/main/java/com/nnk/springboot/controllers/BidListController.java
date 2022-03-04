@@ -1,5 +1,6 @@
 package com.nnk.springboot.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.domain.BidList;
+import com.nnk.springboot.repositories.BidListRepository;
 
 
 
@@ -16,13 +18,15 @@ import com.nnk.springboot.domain.BidList;
 @Controller
 public class BidListController {
 	
-	
+	@Autowired
+	BidListRepository bidListRepo;
     // TODO: Inject Bid service
 
     @RequestMapping("/bidList/list")
     public String home(Model model)
     {
         // TODO: call service find all bids to show to the view
+    	
         return "bidList/list";
     }
 
