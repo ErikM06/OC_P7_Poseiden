@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.interfaces.IBidListService;
 
@@ -18,6 +20,7 @@ public class BidListController {
 
 	@Autowired
 	IBidListService iBidList;
+	
 	// TODO: Inject Bid service
 
 	@RequestMapping("/bidList/list")
@@ -51,13 +54,14 @@ public class BidListController {
 	}
 
 	@PostMapping("/bidList/update/{id}")
-	public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList, BindingResult result, Model model) {
+	public String updateBid(@PathVariable("id") Integer id, @Valid BidListDTO bidListDto, BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Bid and return
 		// list Bid
 		if (result.hasErrors()) {
 			return "bidList/update";
 		}
-		iBidList.uptadeBid(id, bidList);
+		
+		iBidList.uptadeBid(id, bidListDto);
 		
 		return "redirect:/bidList/list";
 	}

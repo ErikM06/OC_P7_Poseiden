@@ -14,8 +14,10 @@ com\nnk\springboot\controllers\UserController.class
 com\nnk\springboot\controllers\TradeController.class
 com\nnk\springboot\domain\RuleName.class
 com\nnk\springboot\domain\CurvePoint.class
+com\nnk\springboot\DTOs\BidListDTO.class
 com\nnk\springboot\services\RatingService.class
 com\nnk\springboot\controllers\HomeController.class
+com\nnk\springboot\interfaces\BidListMapper.class
 com\nnk\springboot\domain\User.class
 com\nnk\springboot\repositories\TradeRepository.class
 com\nnk\springboot\repositories\BidListRepository.class

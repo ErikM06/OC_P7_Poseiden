@@ -7,8 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SelectBeforeUpdate;
 
@@ -28,11 +26,8 @@ public class BidList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer BidListId;
-	@NotBlank (message = "Account is mandatory")
 	String account;
-	@NotBlank (message = "Type is mandatory")
 	String type;
-	
 	Double bidQuantity;
 	Double askQuantity;
 	Double bid;
