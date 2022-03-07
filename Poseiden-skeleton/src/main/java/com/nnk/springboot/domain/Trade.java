@@ -1,6 +1,10 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SelectBeforeUpdate;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +20,8 @@ import java.sql.Timestamp;
 @Setter
 @ToString
 @EqualsAndHashCode
+@DynamicUpdate
+@SelectBeforeUpdate
 public class Trade {
 
 	@Id

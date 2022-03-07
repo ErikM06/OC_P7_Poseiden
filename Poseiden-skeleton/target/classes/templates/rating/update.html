@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8"/>
 	<title>Home</title>
 	<link rel="stylesheet" href="../../css/bootstrap.min.css" >
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
-	<div class="row">
-		<h2>Update Rating</h2>
-	</div>
+		<div class="row">
+			<h2>Update Rating</h2>
+		</div>
 
-	<div class="row">
-		<form action="#" th:action="@{/rating/update/{id}(id=${rating.id})}" th:object="${rating}" method="post" class="form-horizontal" style="width: 100%">
+		<div class="row">
+			<form action="#" th:action="@{/rating/update/{id}(id=${rating.id})}" th:object="${rating}" method="post" class="form-horizontal" style="width: 100%">
+				<input th:field="*{moodysRating}" id="moodysRating" name="moodysRating" placeholder="moodysRating">
+				<p th:if="${#fields.hasErrors('moodysRating')}" th:errorclass="error" th:errors="*{moodysRating}" />
+				<input th:field="*{sandPRating}" id="sandPRating" name="sandPRating" placeholder="sandPRating">
+				<p th:if="${#fields.hasErrors('sandPRating')}" th:errorclass="error" th:errors="*{sandPRating}" />
+				<input th:field="*{fitchRating}" id="fitchRating" name="fitchRating" placeholder="fitchRating">
+				<input th:field="*{orderNumber}"  id="orderNumber" name="orderNumber" placeholder="orderNumber">
+
+
+				<td>
+					<button name="Save" class="btn" type="submit" >Save</button>
+					<button name="Cancel" class="btn" th:href="/rating/list" >Cancel</button>
+				</td>
 			<!--
 			TODO: Create a form to edit the values of Rating, there are 2 buttons: Update data and Cancel to the Rating
-			 -->
-		</form>
-	</div>
+		-->
+	</form>
+</div>
 
 </div>
 </body>
