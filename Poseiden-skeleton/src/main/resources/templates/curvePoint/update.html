@@ -15,6 +15,7 @@ xmlns:th="http://www.thymeleaf.org">
 		<div class="row">
 			<form action="#" th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}" th:object="${curvePoint}" method="post" class="form-horizontal" style="width: 100%">
 				<input th:field="*{curveId}" id="curveId" name="curveId" placeholder="curveId">
+				<input th:field="*{curveId}" id="curveId" name="curveId" placeholder="curveId">
 				<p th:if="${#fields.hasErrors('curveId')}" th:errorclass="error" th:errors="*{curveId}" />
 				<input th:field="*{term}" id="term" name="term" placeholder="term">
 				
