@@ -9,6 +9,9 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SelectBeforeUpdate;
+
 import java.sql.Timestamp;
 
 @Entity
@@ -18,6 +21,8 @@ import java.sql.Timestamp;
 @Setter
 @ToString
 @EqualsAndHashCode
+@DynamicUpdate
+@SelectBeforeUpdate
 public class CurvePoint {
 
 	@Id

@@ -1,13 +1,16 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SelectBeforeUpdate;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "rating")
@@ -16,11 +19,14 @@ import java.sql.Timestamp;
 @Setter
 @ToString
 @EqualsAndHashCode
+@DynamicUpdate
+@SelectBeforeUpdate
 public class Rating {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
+	@NotBlank (message = "is mandatory")
 	String moodysRating;
 	String sandPRating;
 	String fitchRating;

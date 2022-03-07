@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.nnk.springboot.domain.CurvePoint;
 
-public interface ICurvePoint {
+public interface ICurvePointService {
 	
 	public List<CurvePoint> getAllCurvePoint();
 	

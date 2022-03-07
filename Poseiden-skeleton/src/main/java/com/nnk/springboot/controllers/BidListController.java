@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.interfaces.IBidList;
+import com.nnk.springboot.interfaces.IBidListService;
 
 @Controller
 public class BidListController {
 
 	@Autowired
-	IBidList iBidList;
+	IBidListService iBidList;
 	// TODO: Inject Bid service
 
 	@RequestMapping("/bidList/list")
@@ -65,6 +65,7 @@ public class BidListController {
 	@GetMapping("/bidList/delete/{id}")
 	public String deleteBid(@PathVariable("id") Integer id, Model model) {
 		// TODO: Find Bid by Id and delete the bid, return to Bid list
+		model.addAttribute("id", id);
 		iBidList.deleteBid(id);
 		return "redirect:/bidList/list";
 	}

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.nnk.springboot.domain.BidList;
 
-public interface IBidList {
+public interface IBidListService {
 	
 	public List<BidList> getAllBidList();
 	

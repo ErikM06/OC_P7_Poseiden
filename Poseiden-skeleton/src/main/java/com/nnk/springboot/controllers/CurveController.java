@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.domain.CurvePoint;
-import com.nnk.springboot.interfaces.ICurvePoint;
+import com.nnk.springboot.interfaces.ICurvePointService;
 
 @Controller
 public class CurveController {
     // TODO: Inject Curve Point service
 	@Autowired
-	ICurvePoint iCurvePoint;
+	ICurvePointService iCurvePoint;
 
     @RequestMapping("/curvePoint/list")
     public String home(Model model)
@@ -40,7 +40,7 @@ public class CurveController {
     	}
     	iCurvePoint.saveBid(curvePoint);
         // TODO: check data valid and save to db, after saving return Curve list
-        return "curvePoint/list";
+        return "redirect:/curvePoint/list";
     }
 
     @GetMapping("/curvePoint/update/{id}")
@@ -62,6 +62,7 @@ public class CurveController {
 
     @GetMapping("/curvePoint/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
+    	model.addAttribute("id", id);
     	iCurvePoint.deleteBid(id);
         // TODO: Find Curve by Id and delete the Curve, return to Curve list
         return "redirect:/curvePoint/list";
