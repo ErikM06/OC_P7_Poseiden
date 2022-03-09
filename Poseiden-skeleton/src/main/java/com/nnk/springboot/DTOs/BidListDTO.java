@@ -15,7 +15,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 public class BidListDTO {
 	
-	private int id;
+	private Integer id;
 	@NotBlank (message = "Account is mandatory")
 	String accountDto;
 	@NotBlank (message = "Type is mandatory")

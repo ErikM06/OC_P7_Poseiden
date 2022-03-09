@@ -11,6 +11,7 @@ import com.nnk.springboot.interfaces.BidListMapper;
 import com.nnk.springboot.interfaces.IBidListService;
 import com.nnk.springboot.repositories.BidListRepository;
 
+
 @Service
 public class BidListService implements IBidListService, BidListMapper {
 	
