@@ -90,11 +90,7 @@
 			<artifactId>logback-classic</artifactId>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
+		
 
 	</dependencies>
 	<!-- Set active profile to switch between dev and test context -->
@@ -109,9 +105,9 @@
 			</properties>
 		</profile>
 		<profile>
-			<id>prod</id>
+			<id>test</id>
 			<properties>
-				<spring.profiles.active>prod</spring.profiles.active>
+				<spring.profiles.active>test</spring.profiles.active>
 			</properties>
 		</profile>
 	</profiles>
