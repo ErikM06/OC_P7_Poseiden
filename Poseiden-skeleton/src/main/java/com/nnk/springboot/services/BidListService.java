@@ -19,17 +19,17 @@ public class BidListService implements IBidListService, BidListMapper {
 	BidListRepository bidListRepo;
 	
 	
-	
+	@Override
 	public List<BidList> getAllBidList(){	
 		return bidListRepo.findAll();	
 	}
-	
+	@Override
 	public BidList saveBid (BidList bid) {
 		return bidListRepo.save(bid);
 		
 	}
 
-	
+	@Override
 	public BidList uptadeBid(Integer id, BidListDTO bidDto) {
 		BidList bidToUpdate =bidListRepo.getById(id);
 		/*bidToUpdate.setAccount(bid.getAccount());
@@ -38,7 +38,7 @@ public class BidListService implements IBidListService, BidListMapper {
 		updateBidListByBidListDTO(bidDto, bidToUpdate);
 		return bidListRepo.save(bidToUpdate);
 	}
-	
+	@Override
 	public void deleteBid (Integer id) {
 		bidListRepo.deleteById(id);
 	}

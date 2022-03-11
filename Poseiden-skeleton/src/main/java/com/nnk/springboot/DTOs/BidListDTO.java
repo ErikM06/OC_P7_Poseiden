@@ -23,4 +23,12 @@ public class BidListDTO {
 	
 	Double bidQuantityDto;
 
+	public BidListDTO(@NotBlank(message = "Account is mandatory") String accountDto,
+			@NotBlank(message = "Type is mandatory") String typeDto, Double bidQuantityDto) {
+		super();
+		this.accountDto = accountDto;
+		this.typeDto = typeDto;
+		this.bidQuantityDto = bidQuantityDto;
+	}
+
 }
