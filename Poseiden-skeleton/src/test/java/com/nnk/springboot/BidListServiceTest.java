@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
+import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,7 +41,7 @@ public class BidListServiceTest {
 
 	@Autowired
 	@InjectMocks
-	private BidListService bidListService;
+	private BidListService spyBidListService = Mockito.spy(new BidListService());
 	private BidList bid1;
 	private BidList bid2;
 	private List<BidList> bidList;
@@ -78,7 +78,7 @@ public class BidListServiceTest {
 		 * Assert.assertEquals(bidToAssert.getBidQuantity(), 30d, 30d);
 		 */
 		when(bidListRepository.save(any())).thenReturn(bid1);
-		bidListService.saveBid(bid1);
+		spyBidListService.saveBid(bid1);
 		verify(bidListRepository, times(1)).save(any());
 	}
 
@@ -90,7 +90,7 @@ public class BidListServiceTest {
 		 */
 		bidListRepository.save(bid1);
 		when(bidListRepository.findAll()).thenReturn(bidList);
-		List<BidList> bidList1 = bidListService.getAllBidList();
+		List<BidList> bidList1 = spyBidListService.getAllBidList();
 		assertEquals(bidList, bidList1);
 		verify(bidListRepository, times(1)).save(bid1);
 		verify(bidListRepository, times(1)).findAll();
@@ -102,7 +102,7 @@ public class BidListServiceTest {
 		bid1.setBidListId(1);
 		when(bidListRepository.save(any())).thenReturn(any());
 		bidListRepository.save(bid1);
-		bidListService.uptadeBid(bid1.getBidListId(), bidDto);
+		spyBidListService.uptadeBid(bid1.getBidListId(), bidDto);
 		assertThat(bidDto.getId()==bid1.getBidListId() && bidDto.getAccountDto()==bid1.getAccount());
 		verify(bidListRepository, times(2)).save(any());
 	}
@@ -114,7 +114,7 @@ public class BidListServiceTest {
 			throw new Exception();
 		} else {
 			
-			bidListService.deleteBid(bid1.getBidListId());
+			spyBidListService.deleteBid(bid1.getBidListId());
 			verify(bidListRepository).deleteById(bid1.getBidListId());
 		}
 

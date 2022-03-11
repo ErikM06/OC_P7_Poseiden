@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.interfaces.BidListMapper;
 import com.nnk.springboot.interfaces.IBidListService;
 import com.nnk.springboot.repositories.BidListRepository;
+import com.nnk.springboot.services.util.mappers.BidListMapper;
 
 
 @Service

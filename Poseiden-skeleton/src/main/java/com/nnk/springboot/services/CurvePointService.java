@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nnk.springboot.DTOs.CurvePointDto;
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.interfaces.ICurvePointService;
@@ -27,11 +28,11 @@ public class CurvePointService implements ICurvePointService {
 	}
 
 	
-	public CurvePoint uptadeBid(Integer id, CurvePoint curvePoint) {
+	public CurvePoint updateCurvePoint(Integer id, CurvePointDto curvePointDto) {
 		CurvePoint curvePointToUpdate =curvePointRepo.getById(id);
-		curvePointToUpdate.setCurveId(id);
-		curvePointToUpdate.setTerm(curvePoint.getTerm());
-		curvePointToUpdate.setValue(curvePoint.getValue());
+		curvePointToUpdate.setCurveId(curvePointDto.getCurveIdDto());
+		curvePointToUpdate.setTerm(curvePointDto.getTermDto());
+		curvePointToUpdate.setValue(curvePointDto.getValueDto());
 		
 		return curvePointRepo.save(curvePointToUpdate);
 	}

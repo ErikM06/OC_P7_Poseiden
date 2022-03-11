@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.RatingTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.nnk.springboot.RatingTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.081 s <<< FAILURE! - in com.nnk.springboot.RatingTests
+ratingTest  Time elapsed: 0.081 s  <<< ERROR!
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: could not execute statement
+	at com.nnk.springboot.RatingTests.ratingTest(RatingTests.java:27)
+Caused by: org.hibernate.exception.SQLGrammarException: could not execute statement
+	at com.nnk.springboot.RatingTests.ratingTest(RatingTests.java:27)
+Caused by: java.sql.SQLSyntaxErrorException: Champ 'fitch_rating' inconnu dans field list
+	at com.nnk.springboot.RatingTests.ratingTest(RatingTests.java:27)
+

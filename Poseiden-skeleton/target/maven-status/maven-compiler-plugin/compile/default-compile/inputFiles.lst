@@ -17,6 +17,7 @@ C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\spring
 C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\UserRepository.java
 C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\CurvePointRepository.java
 C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\interfaces\BidListMapper.java
+C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\DTOs\CurvePointDto.java
 C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\TradeController.java
 C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\interfaces\ICurvePointService.java
 C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\BidListRepository.java
