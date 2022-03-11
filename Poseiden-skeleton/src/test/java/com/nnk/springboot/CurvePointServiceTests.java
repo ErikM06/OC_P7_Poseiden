@@ -1,6 +1,6 @@
 package com.nnk.springboot;
 
-import com.nnk.springboot.DTOs.CurvePointDto;
+import com.nnk.springboot.DTOs.CurvePointDTO;
 import com.nnk.springboot.domain.CurvePoint;
 
 import com.nnk.springboot.repositories.CurvePointRepository;
@@ -43,7 +43,7 @@ public class CurvePointServiceTests {
 	private CurvePointService spyCurvePointService = Mockito.spy(new CurvePointService());
 	private CurvePoint curvePoint1;
 	private List<CurvePoint> curvePointLs;
-	private CurvePointDto curvePointDto;
+	private CurvePointDTO curvePointDTO;
 
 	@BeforeEach
 	public void setUp() {
@@ -95,12 +95,12 @@ public class CurvePointServiceTests {
 
 	@Test
 	public void updateCurvePoint() {
-		curvePointDto = new CurvePointDto(4, 40.0, 50.0);
+		curvePointDTO = new CurvePointDTO(4, 40.0, 50.0);
 		when(curvePointRepository.save(any())).thenReturn(any());
 		curvePointRepository.save(curvePoint1);
-		spyCurvePointService.updateCurvePoint(curvePoint1.getCurveId(), curvePointDto);
-		assertThat(curvePointDto.getCurveIdDto() == curvePoint1.getCurveId()
-				&& curvePointDto.getTermDto() == curvePoint1.getTerm());
+		spyCurvePointService.updateCurvePoint(curvePoint1.getCurveId(), curvePointDTO);
+		assertThat(curvePointDTO.getCurveIdDto() == curvePoint1.getCurveId()
+				&& curvePointDTO.getTermDto() == curvePoint1.getTerm());
 		verify(curvePointRepository, times(2)).save(any());
 	}
 

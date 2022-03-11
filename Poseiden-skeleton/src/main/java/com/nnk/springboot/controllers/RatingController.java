@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.nnk.springboot.DTOs.RatingDTO;
 import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.interfaces.IRatingService;
+import com.nnk.springboot.services.RatingService;
 
 @Controller
 public class RatingController {
@@ -51,12 +53,13 @@ public class RatingController {
     }
 
     @PostMapping("/rating/update/{id}")
-    public String updateRating(@PathVariable("id") Integer id,  @Valid Rating rating,
+    public String updateRating(@PathVariable("id") Integer id,  @Valid RatingDTO ratingDto,
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Rating and return Rating list
     	if (result.hasErrors()) {
     		return "rating/update?error=true";
     	}
+    	iRatingService.updateRating(id, ratingDto);
         return "redirect:/rating/list";
     }
 

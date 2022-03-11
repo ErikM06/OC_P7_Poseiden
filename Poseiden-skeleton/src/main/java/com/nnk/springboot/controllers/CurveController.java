@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.nnk.springboot.DTOs.CurvePointDto;
+import com.nnk.springboot.DTOs.CurvePointDTO;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.interfaces.ICurvePointService;
 
@@ -53,12 +53,12 @@ public class CurveController {
     }
 
     @PostMapping("/curvePoint/update/{id}")
-    public String updateBid(@PathVariable("id") Integer id,  CurvePointDto curvePointDto,
+    public String updateBid(@PathVariable("id") Integer id,  CurvePointDTO curvePointDTO,
                              BindingResult result, Model model) {
     	if (result.hasErrors()) {
     		return "curvePoint/update";
     	}
-    	iCurvePoint.updateCurvePoint(id, curvePointDto);
+    	iCurvePoint.updateCurvePoint(id, curvePointDTO);
         // TODO: check required fields, if valid call service to update Curve and return Curve list
         return "redirect:/curvePoint/list";
     }

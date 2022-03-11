@@ -3,13 +3,13 @@ package com.nnk.springboot.DTOs;
 import lombok.Data;
 
 @Data
-public class CurvePointDto {
+public class CurvePointDTO {
 	
 	Integer curveIdDto;
 	Double valueDto;
 	Double termDto;
 	
-	public CurvePointDto(Integer curveIdDto, Double valueDto, Double termDto) {
+	public CurvePointDTO(Integer curveIdDto, Double valueDto, Double termDto) {
 		super();
 		this.curveIdDto = curveIdDto;
 		this.valueDto = valueDto;
