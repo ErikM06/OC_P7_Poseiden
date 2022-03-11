@@ -15,16 +15,16 @@ xmlns:th="http://www.thymeleaf.org">
 
 		<div class="row">
 			<form action="#" th:action="@{/bidList/validate}" th:object="${bidList}" method="post" class="form-horizontal" style="width: 100%">
-				<input th:field="*{account}" id="account" name="account" placeholder="account">
-				<p th:if="${#fields.hasErrors('account')}" th:errorclass="error" th:errors="*{account}" />
-				<input th:field="*{type}" id="type" name="type" placeholder="type">
-				<p th:if="${#fields.hasErrors('type')}" th:errorclass="error" th:errors="*{type}" />
-				<input th:field="*{bidQuantity}" th:errorclass="fieldError"   id="bidQuantity" name="bidQuantity" placeholder="bidQuantity">
+				<input th:field="*{accountDto}" id="account" name="account" placeholder="account">
+				<p th:if="${#fields.hasErrors('accountDto')}" th:errorclass="error" th:errors="*{accountDto}" />
+				<input th:field="*{typeDto}" id="type" name="type" placeholder="type">
+				<p th:if="${#fields.hasErrors('typeDto')}" th:errorclass="error" th:errors="*{typeDto}" />
+				<input th:field="*{bidQuantityDto}" th:errorclass="fieldError"   id="bidQuantity" name="bidQuantity" placeholder="bidQuantity">
 
 
 				<td>
 					<button name="Save" class="btn" type="submit" >Save</button>
-					<button name="Cancel" class="btn" th:href="/bidList/list" >Cancel</button>
+					<button name="Cancel" class="btn" th:href="@{/bidList/list}" >Cancel</button>
 				</td>
 			<!--
 			TODO: Create a form to input the values of Bid, there are 2 buttons: Save data and Cancel to the list Bid

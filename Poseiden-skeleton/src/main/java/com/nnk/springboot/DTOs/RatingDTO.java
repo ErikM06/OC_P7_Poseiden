@@ -6,20 +6,21 @@ import lombok.Data;
 
 @Data
 public class RatingDTO {
-	
+	Integer idDto;
 	@NotBlank (message = "moodysRating is mandatory")
-	String moodysRating;
-	String sandPRating;
-	String fitchRating;
-	Integer orderNumber;
-	
-	public RatingDTO( String moodysRating, String sandPRating,
-			String fitchRating, Integer orderNumber) {
+	String moodysRatingDto;
+	String sandPRatingDto;
+	String fitchRatingDto;
+	Integer orderNumberDto;
+	public RatingDTO( String moodysRatingDto, String sandPRatingDto,
+			String fitchRatingDto, Integer orderNumberDto) {
 		super();
-		this.moodysRating = moodysRating;
-		this.sandPRating = sandPRating;
-		this.fitchRating = fitchRating;
-		this.orderNumber = orderNumber;
+		this.moodysRatingDto = moodysRatingDto;
+		this.sandPRatingDto = sandPRatingDto;
+		this.fitchRatingDto = fitchRatingDto;
+		this.orderNumberDto = orderNumberDto;
 	}
+	
+	
 
 }

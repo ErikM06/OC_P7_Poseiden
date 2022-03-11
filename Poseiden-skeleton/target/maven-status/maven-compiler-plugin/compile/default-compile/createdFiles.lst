@@ -1,7 +1,9 @@
+com\nnk\springboot\DTOs\CurvePointDTO.class
 com\nnk\springboot\repositories\RatingRepository.class
 com\nnk\springboot\interfaces\IBidListService.class
 com\nnk\springboot\Application.class
 com\nnk\springboot\interfaces\IRatingService.class
+com\nnk\springboot\DTOs\RatingDTO.class
 com\nnk\springboot\interfaces\ICurvePointService.class
 com\nnk\springboot\controllers\RatingController.class
 com\nnk\springboot\services\TradeService.class
@@ -17,8 +19,9 @@ com\nnk\springboot\domain\CurvePoint.class
 com\nnk\springboot\DTOs\BidListDTO.class
 com\nnk\springboot\services\RatingService.class
 com\nnk\springboot\controllers\HomeController.class
-com\nnk\springboot\interfaces\BidListMapper.class
 com\nnk\springboot\domain\User.class
+com\nnk\springboot\services\util\mappers\RatingMapper.class
+com\nnk\springboot\services\util\mappers\BidListMapper.class
 com\nnk\springboot\repositories\TradeRepository.class
 com\nnk\springboot\repositories\BidListRepository.class
 com\nnk\springboot\services\UserService.class
@@ -27,8 +30,8 @@ com\nnk\springboot\controllers\CurveController.class
 com\nnk\springboot\services\CurvePointService.class
 com\nnk\springboot\domain\Rating.class
 com\nnk\springboot\controllers\RuleNameController.class
-com\nnk\springboot\DTOs\CurvePointDto.class
 com\nnk\springboot\interfaces\ITradeService.class
 com\nnk\springboot\controllers\BidListController.class
 com\nnk\springboot\repositories\CurvePointRepository.class
+com\nnk\springboot\services\util\mappers\CurvePointMapper.class
 com\nnk\springboot\repositories\RuleNameRepository.class

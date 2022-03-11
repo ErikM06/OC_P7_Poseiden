@@ -77,8 +77,9 @@ public class BidListServiceTest {
 		 * Assert.assertNotNull(bidToAssert);
 		 * Assert.assertEquals(bidToAssert.getBidQuantity(), 30d, 30d);
 		 */
+		bidDto = new BidListDTO("accountDto test", "typeDto test", 10.0);
 		when(bidListRepository.save(any())).thenReturn(bid1);
-		spyBidListService.saveBid(bid1);
+		spyBidListService.saveBid(bidDto);
 		verify(bidListRepository, times(1)).save(any());
 	}
 

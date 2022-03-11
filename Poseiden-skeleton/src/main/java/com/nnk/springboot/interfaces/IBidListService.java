@@ -11,7 +11,7 @@ public interface IBidListService {
 	
 	public BidList uptadeBid(Integer id, BidListDTO bidDto);
 	
-	public BidList saveBid (BidList bid);
+	public BidList saveBid (BidListDTO bidDto);
 	
 	public void deleteBid (Integer id);
 }

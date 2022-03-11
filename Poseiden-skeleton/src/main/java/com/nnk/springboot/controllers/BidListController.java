@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,18 +32,19 @@ public class BidListController {
 	}
 
 	@GetMapping("/bidList/add")
-	public String addBidForm(BidList bid, Model model) {
-		model.addAttribute("bidList", bid);
+	public String addBidForm( Model model) {
+		model.addAttribute("bidList", new BidListDTO());
 		return "bidList/add";
 	}
 
 	@PostMapping("/bidList/validate")
-	public String validate(@Valid BidList bid, BindingResult result, Model model) {
+	public String validate( @ModelAttribute("bidlist") @Valid BidListDTO bidDto, BindingResult result, Model model) {
 		// TODO: check data valid and save to db, after saving return bid list
+		
 		if (result.hasErrors()) {
 			return "bidList/add";
 		}
-		iBidList.saveBid(bid);
+		iBidList.saveBid(bidDto);
 
 		return "redirect:/bidList/list";
 	}
