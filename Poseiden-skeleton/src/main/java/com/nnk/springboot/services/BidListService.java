@@ -3,7 +3,6 @@ package com.nnk.springboot.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import com.nnk.springboot.DTOs.BidListDTO;
@@ -13,7 +12,6 @@ import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.util.BidListMapper;
 
 @Service
-@ComponentScan("com.nnk.springboot.util.BidListMapper")
 public class BidListService implements IBidListService {
 
 	@Autowired

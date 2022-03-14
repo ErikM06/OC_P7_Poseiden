@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.BidListServiceTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.478 s <<< FAILURE! - in com.nnk.springboot.BidListServiceTest
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.481 s <<< FAILURE! - in com.nnk.springboot.BidListServiceTest
 updateBidTest  Time elapsed: 0.118 s  <<< ERROR!
 java.lang.NullPointerException
 	at com.nnk.springboot.BidListServiceTest.updateBidTest(BidListServiceTest.java:106)

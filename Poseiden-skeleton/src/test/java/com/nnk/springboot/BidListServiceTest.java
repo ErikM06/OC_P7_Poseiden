@@ -16,6 +16,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -38,12 +40,13 @@ public class BidListServiceTest {
 
 	@Mock
 	private BidListRepository bidListRepository;
-
+	
+	
+	private BidListService bidListServiceMock;
 	@Autowired
 	@InjectMocks
 	private BidListService spyBidListService = Mockito.spy(new BidListService());
 	private BidList bid1;
-	private BidList bid2;
 	private List<BidList> bidList;
 	private BidListDTO bidDto;
 
@@ -55,16 +58,15 @@ public class BidListServiceTest {
 		 */
 		bidList = new ArrayList<BidList>();
 		bid1 = new BidList("Account Test", "Type Test", 10d);
-		bid2 =  new BidList();
 		bidList.add(bid1);
-		bidList.add(bid2);
+		
 		
 	}
 
 	@AfterEach()
 	public void tearDown() {
 		// bidListRepository.deleteAll();
-		bid1 = bid2 = null;
+		bid1 = null;
 		bidList = null;
 	}
 
@@ -110,14 +112,11 @@ public class BidListServiceTest {
 
 	@Test
 	public void deleteBidTest() throws Exception{
-		Optional<BidList> bid1Optional = Optional.of(bid1);
-		if (bid1Optional.isEmpty()) {
-			throw new Exception();
-		} else {
-			
-			spyBidListService.deleteBid(bid1.getBidListId());
-			verify(bidListRepository).deleteById(bid1.getBidListId());
-		}
+		
+			doNothing().when(bidListRepository).delete(bid1);
+			bidListServiceMock.deleteBid(bid1.getBidListId());
+			verify(bidListRepository, times(1)).deleteById(bid1.getBidListId());
+		
 
 	}
 }

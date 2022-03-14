@@ -61,7 +61,7 @@ public class RatingServiceTests {
 	}
 
 	@Test
-	public void saveBidTest() {
+	public void saveRatingTest() {
 		/*
 		 * BidList bid = new BidList("Account Test", "Type Test", 30d);
 		 * bidListService.saveBid(bid); BidList bidToAssert =
@@ -75,7 +75,7 @@ public class RatingServiceTests {
 	}
 
 	@Test
-	public void findAllBidTest() {
+	public void findRatingTest() {
 		/*
 		 * List<BidList> listResult = bidListService.getAllBidList();
 		 * Assert.assertFalse(listResult.isEmpty());
@@ -89,7 +89,7 @@ public class RatingServiceTests {
 	}
 
 	@Test
-	public void updateBidTest() {
+	public void updateRatingTest() {
 		ratingDTO = new RatingDTO("moodysRating modified ", "sandRating modified","fitchRating modified", 2);
 		rating1.setId(1);
 		when(ratingRepository.save(any())).thenReturn(any());
@@ -100,7 +100,7 @@ public class RatingServiceTests {
 	}
 
 	@Test
-	public void deleteBidTest() throws Exception{
+	public void deleteRatingTest() throws Exception{
 		Optional<Rating> rating1Optional = Optional.of(rating1);
 		if (rating1Optional.isEmpty()) {
 			throw new Exception();

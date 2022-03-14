@@ -6,7 +6,6 @@ import com.nnk.springboot.DTOs.TradeDTO;
 import com.nnk.springboot.domain.Trade;
 
 
-
 public interface ITradeService {
 	
 	public List<Trade> getAllTrade();
@@ -18,6 +17,5 @@ public interface ITradeService {
 	public void deleteTrade(Integer id);
 
 	public Trade getById(Integer id);
-
 
 }

@@ -3,6 +3,7 @@ package com.nnk.springboot.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.nnk.springboot.DTOs.TradeDTO;
 import com.nnk.springboot.domain.Trade;
@@ -10,6 +11,7 @@ import com.nnk.springboot.interfaces.ITradeService;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.util.TradeMapper;
 
+@Service
 public class TradeService implements ITradeService{
 	
 	@Autowired

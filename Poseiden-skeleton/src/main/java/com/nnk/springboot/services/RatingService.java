@@ -19,8 +19,6 @@ public class RatingService implements IRatingService{
 	
 	@Autowired
 	RatingMapper rMapper;
-	
-	
 
 	@Override
 	public List<Rating> getAllRating() {
@@ -51,9 +49,5 @@ public class RatingService implements IRatingService{
 		// TODO Auto-generated method stub
 		return ratingRepo.getById(id);
 	}
-
-	
-
-	
 
 }

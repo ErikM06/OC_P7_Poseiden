@@ -1,7 +1,7 @@
 package com.nnk.springboot.util;
 
-import com.nnk.springboot.DTOs.CurvePointDTO;
-import com.nnk.springboot.domain.CurvePoint;
+import com.nnk.springboot.DTOs.TradeDTO;
+import com.nnk.springboot.domain.Trade;
 import javax.annotation.Generated;
 import org.springframework.stereotype.Component;
 
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11 (Oracle Corporation)"
 )
 @Component
-public class CurvePointMapperImpl implements CurvePointMapper {
+public class TradeMapperImpl implements TradeMapper {
 
     @Override
-    public void updateCurvePointByCurvePointDto(CurvePointDTO curvePointDTO, CurvePoint curvePoint) {
-        if ( curvePointDTO == null ) {
+    public void updateRatingByDTO(TradeDTO tradeDto, Trade trade) {
+        if ( tradeDto == null ) {
             return;
         }
     }
