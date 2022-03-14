@@ -10,7 +10,7 @@ import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.domain.BidList;
 
 
-@Component
+
 @Mapper(componentModel = "spring")
 public interface BidListMapper {
 	@BeanMapping (nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

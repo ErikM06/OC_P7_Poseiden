@@ -9,114 +9,87 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-
-import java.util.ArrayList;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import java.util.List;
-import java.util.Optional;
+import javax.transaction.Transactional;
 
-@ExtendWith(MockitoExtension.class)
-
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@ActiveProfiles("test")
 /*
- * https://springframework.guru/testing-spring-boot-restful-services/
+ * Integration test
  */
 public class BidListServiceTest {
 
 	Logger logger = LoggerFactory.getLogger(BidListServiceTest.class);
 
-	@Mock
-	private BidListRepository bidListRepository;
-	
-	
-	private BidListService bidListServiceMock;
 	@Autowired
-	@InjectMocks
-	private BidListService spyBidListService = Mockito.spy(new BidListService());
-	private BidList bid1;
-	private List<BidList> bidList;
+	private BidListRepository bidListRepository;
+
+	@Autowired
+	private BidListService bidListService;
+
+	@Mock
 	private BidListDTO bidDto;
 
+	@Mock
+	private BidList bid;
+
 	@BeforeEach
-	public void setUp() {
-		/*
-		 * BidList bid = new BidList("Account Test", "Type Test", 10d); bid =
-		 * bidListRepository.save(bid); logger.info(bid.toString()+"has been saved");
-		 */
-		bidList = new ArrayList<BidList>();
-		bid1 = new BidList("Account Test", "Type Test", 10d);
-		bidList.add(bid1);
-		
-		
+	public void setUpBid() {
+		bid = new BidList("account test", "type test", 10.0);
+		bidListRepository.save(bid);
+		bidDto = new BidListDTO("accountDto test", "typeDto test", 50.0);
 	}
 
-	@AfterEach()
+	@AfterEach
 	public void tearDown() {
-		// bidListRepository.deleteAll();
-		bid1 = null;
-		bidList = null;
+		bid = null;
+		bidDto = null;
 	}
 
 	@Test
 	public void saveBidTest() {
-		/*
-		 * BidList bid = new BidList("Account Test", "Type Test", 30d);
-		 * bidListService.saveBid(bid); BidList bidToAssert =
-		 * bidListRepository.getById(bid.getBidListId());
-		 * Assert.assertNotNull(bidToAssert);
-		 * Assert.assertEquals(bidToAssert.getBidQuantity(), 30d, 30d);
-		 */
-		bidDto = new BidListDTO("accountDto test", "typeDto test", 10.0);
-		when(bidListRepository.save(any())).thenReturn(bid1);
-		spyBidListService.saveBid(bidDto);
-		verify(bidListRepository, times(1)).save(any());
+		BidList bidToSave = bidListService.saveBid(bidDto);
+		assertNotNull(bidToSave);
+		assertEquals(bidToSave.getAccount(), bidDto.getAccount());
+
 	}
 
 	@Test
 	public void findAllBidTest() {
-		/*
-		 * List<BidList> listResult = bidListService.getAllBidList();
-		 * Assert.assertFalse(listResult.isEmpty());
-		 */
-		bidListRepository.save(bid1);
-		when(bidListRepository.findAll()).thenReturn(bidList);
-		List<BidList> bidList1 = spyBidListService.getAllBidList();
-		assertEquals(bidList, bidList1);
-		verify(bidListRepository, times(1)).save(bid1);
-		verify(bidListRepository, times(1)).findAll();
+		List<BidList> bidList = bidListService.getAllBidList();
+		assertNotNull(bidList);
+		assertTrue(bidList.size() > 0);
 	}
 
 	@Test
+	@Transactional
+	/*
+	 * check for transaction
+	 */
 	public void updateBidTest() {
-		bidDto = new BidListDTO("Account modified", "Type modified", 50d);
-		bid1.setBidListId(1);
-		when(bidListRepository.save(any())).thenReturn(any());
-		bidListRepository.save(bid1);
-		spyBidListService.uptadeBid(bid1.getBidListId(), bidDto);
-		assertThat(bidDto.getId()==bid1.getBidListId() && bidDto.getAccount()==bid1.getAccount());
-		verify(bidListRepository, times(2)).save(any());
+		bidListService.uptadeBid(bid.getBidListId(), bidDto);
+		BidList retrivedModifiedBid = bidListRepository.getById(bid.getBidListId());
+		assertThat(bidDto.getAccount() == retrivedModifiedBid.getAccount());
 	}
 
 	@Test
-	public void deleteBidTest() throws Exception{
-		
-			doNothing().when(bidListRepository).delete(bid1);
-			bidListServiceMock.deleteBid(bid1.getBidListId());
-			verify(bidListRepository, times(1)).deleteById(bid1.getBidListId());
-		
+	public void deleteBidTest() throws Exception {
+		bidListService.deleteBid(bid.getBidListId());
+		assertFalse(bidListRepository.existsById(bid.getBidListId()));
 
 	}
 }

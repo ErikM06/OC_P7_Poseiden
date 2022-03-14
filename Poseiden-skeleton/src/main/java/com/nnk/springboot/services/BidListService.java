@@ -29,10 +29,7 @@ public class BidListService implements IBidListService {
 	public BidList saveBid(BidListDTO bidDto) {
 		// mapping bitDto with a loop?
 		BidList bid = new BidList();
-		bid.setAccount(bidDto.getAccount());
-		bid.setType(bidDto.getType());
-		bid.setBidQuantity(bidDto.getBidQuantity());
-
+		bMapper.updateBidListByBidListDTO(bidDto, bid);
 		return bidListRepo.save(bid);
 	}
 
