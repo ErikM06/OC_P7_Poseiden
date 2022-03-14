@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nnk.springboot.DTOs.RatingDTO;
 import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.interfaces.IRatingService;
-import com.nnk.springboot.services.RatingService;
 
 @Controller
 public class RatingController {
@@ -31,13 +31,13 @@ public class RatingController {
     }
 
     @GetMapping("/rating/add")
-    public String addRatingForm( Model model) {
-    	model.addAttribute("rating", rating);
+    public String addRatingForm(Model model) {
+    	model.addAttribute("rating", new Rating());
         return "rating/add";
     }
 
     @PostMapping("/rating/validate")
-    public String validate(@Valid Rating rating, BindingResult result, Model model) {
+    public String validate(@ModelAttribute("rating") @Valid Rating rating, BindingResult result, Model model) {
         // TODO: check data valid and save to db, after saving return Rating list
     	if (result.hasErrors()) {
     		return "redirect:/rating/add?error=true";
@@ -49,11 +49,13 @@ public class RatingController {
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get Rating by Id and to model then show to the form
+    	model.addAttribute("ratingDto", new RatingDTO());
+    	model.addAttribute("rating", iRatingService.getById(id));
         return "rating/update";
     }
 
     @PostMapping("/rating/update/{id}")
-    public String updateRating(@PathVariable("id") Integer id,  @Valid RatingDTO ratingDto,
+    public String updateRating(@PathVariable("id") Integer id,  @ModelAttribute("ratingDto") @Valid RatingDTO ratingDto,
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Rating and return Rating list
     	if (result.hasErrors()) {

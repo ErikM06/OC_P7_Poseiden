@@ -13,5 +13,7 @@ public interface IRatingService {
 	public Rating updateRating(Integer id, RatingDTO ratingDto);
 
 	public void deleteRating(Integer id);
+	
+	public Rating getById(Integer id);
 
 }

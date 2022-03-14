@@ -12,10 +12,15 @@ import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.util.RatingMapper;
 
 @Service
-public class RatingService implements IRatingService, RatingMapper{
+public class RatingService implements IRatingService{
 	
 	@Autowired
 	RatingRepository ratingRepo;
+	
+	@Autowired
+	RatingMapper rMapper;
+	
+	
 
 	@Override
 	public List<Rating> getAllRating() {
@@ -32,7 +37,7 @@ public class RatingService implements IRatingService, RatingMapper{
 	@Override
 	public Rating updateRating(Integer id, RatingDTO ratingDto) {
 		Rating ratingToUpdate = ratingRepo.getById(id);
-		updateBidListByBidListDTO(ratingDto, ratingToUpdate);;
+		rMapper.updateRatingByDTO(ratingDto, ratingToUpdate);;
 		return ratingRepo.save(ratingToUpdate);
 	}
 
@@ -42,9 +47,13 @@ public class RatingService implements IRatingService, RatingMapper{
 	}
 
 	@Override
-	public void updateBidListByBidListDTO(RatingDTO ratingDto, Rating rating) {
+	public Rating getById(Integer id) {
 		// TODO Auto-generated method stub
-		
+		return ratingRepo.getById(id);
 	}
+
+	
+
+	
 
 }
