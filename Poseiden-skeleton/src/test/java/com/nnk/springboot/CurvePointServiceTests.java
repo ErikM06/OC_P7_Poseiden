@@ -11,109 +11,81 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.util.ArrayList;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import java.util.List;
-import java.util.Optional;
+import javax.transaction.Transactional;
 
-@ExtendWith(MockitoExtension.class)
+@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@ActiveProfiles("test")
 
 public class CurvePointServiceTests {
 
 	Logger logger = LoggerFactory.getLogger(CurvePointServiceTests.class);
 
-	@Mock
+	@Autowired
 	private CurvePointRepository curvePointRepository;
 
 	@Autowired
-	@InjectMocks
-	private CurvePointService spyCurvePointService = Mockito.spy(new CurvePointService());
-	private CurvePoint curvePoint1;
-	private List<CurvePoint> curvePointLs;
-	private CurvePointDTO curvePointDTO;
+	private CurvePointService curvePointService;
+
+	@Mock
+	private CurvePoint curvePoint;
+
+	@Mock
+	private CurvePointDTO curvePointDto;
 
 	@BeforeEach
 	public void setUp() {
-		/*
-		 * BidList bid = new BidList("Account Test", "Type Test", 10d); bid =
-		 * bidListRepository.save(bid); logger.info(bid.toString()+"has been saved");
-		 */
-		curvePointLs = new ArrayList<CurvePoint>();
-		curvePoint1 = new CurvePoint(1, 20.0, 20.0);
-		curvePointLs.add(curvePoint1);
-		;
-
+		curvePoint = new CurvePoint(1, 20.0, 20.0);
+		curvePointRepository.save(curvePoint);
+		curvePointDto = new CurvePointDTO(2, 30.0, 40.0);
 	}
 
 	@AfterEach()
 	public void tearDown() {
-		// bidListRepository.deleteAll();
-		curvePoint1 = null;
-		curvePointLs = null;
+		curvePoint = null;
+		curvePointDto = null;
 	}
 
 	@Test
 	public void saveBidTest() {
-		/*
-		 * BidList bid = new BidList("Account Test", "Type Test", 30d);
-		 * bidListService.saveBid(bid); BidList bidToAssert =
-		 * bidListRepository.getById(bid.getBidListId());
-		 * Assert.assertNotNull(bidToAssert);
-		 * Assert.assertEquals(bidToAssert.getBidQuantity(), 30d, 30d);
-		 */
-		when(curvePointRepository.save(any())).thenReturn(curvePoint1);
-		spyCurvePointService.saveBid(curvePoint1);
-		verify(curvePointRepository, times(1)).save(any());
+		CurvePoint curvePointToSave = curvePointService.saveBid(curvePoint);
+		assertNotNull(curvePointToSave);
+		assertEquals(curvePointToSave.getValue(), curvePoint.getValue());
 	}
 
 	@Test
 	public void findAllBidTest() {
-		/*
-		 * List<BidList> listResult = bidListService.getAllBidList();
-		 * Assert.assertFalse(listResult.isEmpty());
-		 */
-		curvePointRepository.save(curvePoint1);
-		when(curvePointRepository.findAll()).thenReturn(curvePointLs);
-		List<CurvePoint> curvePointList1 = spyCurvePointService.getAllCurvePoint();
-		assertEquals(curvePointLs, curvePointList1);
-		verify(curvePointRepository, times(1)).save(curvePoint1);
-		verify(curvePointRepository, times(1)).findAll();
+		List<CurvePoint> curveList = curvePointService.getAllCurvePoint();
+		assertNotNull(curveList);
+		assertTrue(curveList.size() > 0);
 	}
 
 	@Test
-	public void updateCurvePoint() {
-		curvePointDTO = new CurvePointDTO(4, 40.0, 50.0);
-		when(curvePointRepository.save(any())).thenReturn(any());
-		curvePointRepository.save(curvePoint1);
-		spyCurvePointService.updateCurvePoint(curvePoint1.getCurveId(), curvePointDTO);
-		assertThat(curvePointDTO.getCurveIdDto() == curvePoint1.getCurveId()
-				&& curvePointDTO.getTermDto() == curvePoint1.getTerm());
-		verify(curvePointRepository, times(2)).save(any());
+	@Transactional
+	public void updateCurvePointTest() {
+		curvePointService.updateCurvePoint(curvePoint.getCurveId(), curvePointDto);
+		CurvePoint retrivedModifiedCurve = curvePointRepository.getById(curvePoint.getCurveId());
+		assertThat(curvePointDto.getValue() == retrivedModifiedCurve.getValue());
 	}
 
 	@Test
 	public void deleteBidTest() throws Exception {
-		Optional<CurvePoint> curvePoint1Optional = Optional.of(curvePoint1);
-		if (curvePoint1Optional.isEmpty()) {
-			throw new Exception();
-		} else {
-
-			spyCurvePointService.deleteBid(curvePoint1.getCurveId());
-			verify(curvePointRepository).deleteById(curvePoint1.getCurveId());
-		}
+		curvePointService.deleteBid(curvePoint.getCurveId());
+		assertFalse(curvePointRepository.existsById(curvePoint.getCurveId()));
 
 	}
 

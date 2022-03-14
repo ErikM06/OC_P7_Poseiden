@@ -14,15 +14,15 @@ import lombok.ToString;
 @Component
 public class CurvePointDTO {
 	
-	Integer curveIdDto;
-	Double valueDto;
-	Double termDto;
+	Integer curveId;
+	Double value;
+	Double term;
 	
-	public CurvePointDTO(Integer curveIdDto, Double valueDto, Double termDto) {
+	public CurvePointDTO(Integer curveId, Double value, Double term) {
 		super();
-		this.curveIdDto = curveIdDto;
-		this.valueDto = valueDto;
-		this.termDto = termDto;
+		this.curveId = curveId;
+		this.value = value;
+		this.term = term;
 	}
 
 	
