@@ -1,6 +1,8 @@
 package com.nnk.springboot.DTOs;
 
-import javax.validation.constraints.NotBlank;
+
+
+import org.springframework.stereotype.Component;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -13,22 +15,22 @@ import lombok.ToString;
 @Setter
 @ToString
 @EqualsAndHashCode
+@Component
 public class BidListDTO {
 	
 	private Integer id;
-	@NotBlank (message = "Account is mandatory")
-	String accountDto;
-	@NotBlank (message = "Type is mandatory")
-	String typeDto;
 	
-	Double bidQuantityDto;
+	String account;
+	
+	String type;
+	
+	Double bidQuantity;
 
-	public BidListDTO(@NotBlank(message = "Account is mandatory") String accountDto,
-			@NotBlank(message = "Type is mandatory") String typeDto, Double bidQuantityDto) {
+	public BidListDTO(String account, String type, Double bidQuantity) {
 		super();
-		this.accountDto = accountDto;
-		this.typeDto = typeDto;
-		this.bidQuantityDto = bidQuantityDto;
+		this.account = account;
+		this.type = type;
+		this.bidQuantity = bidQuantity;
 	}
 
 }

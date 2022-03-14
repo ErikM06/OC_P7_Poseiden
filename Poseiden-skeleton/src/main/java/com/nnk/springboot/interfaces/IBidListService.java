@@ -5,6 +5,7 @@ import java.util.List;
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.domain.BidList;
 
+
 public interface IBidListService {
 	
 	public List<BidList> getAllBidList();
@@ -14,4 +15,6 @@ public interface IBidListService {
 	public BidList saveBid (BidListDTO bidDto);
 	
 	public void deleteBid (Integer id);
+	
+	public BidList getById (Integer id);
 }

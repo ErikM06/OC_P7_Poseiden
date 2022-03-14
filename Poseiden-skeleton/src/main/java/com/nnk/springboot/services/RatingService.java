@@ -9,7 +9,7 @@ import com.nnk.springboot.DTOs.RatingDTO;
 import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.interfaces.IRatingService;
 import com.nnk.springboot.repositories.RatingRepository;
-import com.nnk.springboot.services.util.mappers.RatingMapper;
+import com.nnk.springboot.util.RatingMapper;
 
 @Service
 public class RatingService implements IRatingService, RatingMapper{

@@ -52,16 +52,20 @@ public class BidListController {
 	@GetMapping("/bidList/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		// TODO: get Bid by Id and to model then show to the form
+		model.addAttribute("bidList", iBidList.getById(id));
+		model.addAttribute("bidListDto", new BidListDTO());
 		return "bidList/update";
 	}
 
 	@PostMapping("/bidList/update/{id}")
-	public String updateBid(@PathVariable("id") Integer id, @Valid BidListDTO bidListDto, BindingResult result, Model model) {
+	public String updateBid(@PathVariable("id") Integer id,@ModelAttribute("bidListDto") @Valid BidListDTO bidListDto, 
+			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Bid and return
 		// list Bid
 		if (result.hasErrors()) {
 			return "bidList/update";
 		}
+		//check if bid existe
 		
 		iBidList.uptadeBid(id, bidListDto);
 		

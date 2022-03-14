@@ -104,7 +104,7 @@ public class BidListServiceTest {
 		when(bidListRepository.save(any())).thenReturn(any());
 		bidListRepository.save(bid1);
 		spyBidListService.uptadeBid(bid1.getBidListId(), bidDto);
-		assertThat(bidDto.getId()==bid1.getBidListId() && bidDto.getAccountDto()==bid1.getAccount());
+		assertThat(bidDto.getId()==bid1.getBidListId() && bidDto.getAccount()==bid1.getAccount());
 		verify(bidListRepository, times(2)).save(any());
 	}
 

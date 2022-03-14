@@ -11,7 +11,7 @@ import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.interfaces.ICurvePointService;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.repositories.CurvePointRepository;
-import com.nnk.springboot.services.util.mappers.CurvePointMapper;
+import com.nnk.springboot.util.CurvePointMapper;
 
 @Service
 public class CurvePointService implements ICurvePointService, CurvePointMapper {

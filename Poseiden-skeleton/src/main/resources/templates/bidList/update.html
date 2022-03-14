@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="row">
-		<form action="#" th:action="@{/bidList/update/{id}(id=${bidList.bidListId})}" th:object="${bidList}" method="post" class="form-horizontal" style="width: 100%">
+		<form action="#" th:action="@{/bidList/update/{id}(id=${bidList.bidListId})}" th:object="${bidListDto}" method="post" class="form-horizontal" style="width: 100%">
 			<input th:field="*{account}" id="account" name="account" placeholder="account">
 				<p th:if="${#fields.hasErrors('account')}" th:errorclass="error" th:errors="*{account}" />
 				<input th:field="*{type}" id="type" name="type" placeholder="type">
@@ -23,7 +23,7 @@
 
 				<td>
 					<button name="Save" class="btn" type="submit" >Update</button>
-					<button name="Cancel" class="btn" th:href="/bidList/list" >Cancel</button>
+					<button name="Cancel" class="btn" th:href="@{/bidList/list}" >Cancel</button>
 				</td>
 			<!--
 			TODO: Create a form to edit the values of Bid, there are 2 buttons: Update data and Cancel to the list Bid
