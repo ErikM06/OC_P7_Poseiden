@@ -1,46 +1,84 @@
 package com.nnk.springboot;
 
+import com.nnk.springboot.DTOs.TradeDTO;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import com.nnk.springboot.services.TradeService;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import java.util.Optional;
+import javax.transaction.Transactional;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
+@ActiveProfiles("test")
 public class TradeTests {
 
 	@Autowired
 	private TradeRepository tradeRepository;
+	
+	@Autowired
+	private TradeService tradeService;
+	
+	@Mock
+	Trade trade;
+	
+	@Mock
+	TradeDTO tradeDTO;
+	
+	@BeforeEach
+	private void setUp() {
+		trade = new Trade("Account test","Type test");
+		tradeRepository.save(trade);
+		tradeDTO = new TradeDTO("TradeDto account test","TradeDto Type test");
+	}
+	
+	@AfterEach
+	private void tearDown() {
+		trade = null;
+		tradeDTO = null;
+		tradeRepository.deleteAll();
+	}
+	@Test
+	public void saveTradeTest() {
+		Trade tradeToSave = tradeService.saveTrade(trade);
+		assertNotNull(tradeToSave);
+		assertEquals(tradeToSave.getAccount(), trade.getAccount());
+	}
 
 	@Test
-	public void tradeTest() {
-		Trade trade = new Trade("Trade Account", "Type");
+	public void findAllTradeTest() {
+		List<Trade> tradeLs = tradeService.getAllTrade();
+		assertNotNull(tradeLs);
+		assertTrue(tradeLs.size() > 0);
+	}
 
-		// Save
-		trade = tradeRepository.save(trade);
-		Assert.assertNotNull(trade.getTradeId());
-		Assert.assertTrue(trade.getAccount().equals("Trade Account"));
+	@Test
+	@Transactional
+	public void updateTradeTest() {
+		tradeService.updateTrade(trade.getTradeId(), tradeDTO);
+		Trade retrivedModifiedTrade = tradeRepository.getById(trade.getTradeId());
+		assertThat(tradeDTO.getAccount() == retrivedModifiedTrade.getAccount());
+	}
 
-		// Update
-		trade.setAccount("Trade Account Update");
-		trade = tradeRepository.save(trade);
-		Assert.assertTrue(trade.getAccount().equals("Trade Account Update"));
+	@Test
+	public void deleteTradeTest() throws Exception {
+		tradeService.deleteTrade(trade.getTradeId());
+		assertFalse(tradeRepository.existsById(trade.getTradeId()));
 
-		// Find
-		List<Trade> listResult = tradeRepository.findAll();
-		Assert.assertTrue(listResult.size() > 0);
-
-		// Delete
-		Integer id = trade.getTradeId();
-		tradeRepository.delete(trade);
-		Optional<Trade> tradeList = tradeRepository.findById(id);
-		Assert.assertFalse(tradeList.isPresent());
 	}
 }

@@ -13,5 +13,12 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Component
 public class TradeDTO {
+	String account;
+	String type;
+
+	public TradeDTO(String account, String type) {
+		this.account = account;
+		this.type = type;
+	}
 
 }

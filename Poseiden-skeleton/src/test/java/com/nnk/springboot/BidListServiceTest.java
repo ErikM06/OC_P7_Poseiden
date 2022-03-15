@@ -58,6 +58,7 @@ public class BidListServiceTest {
 	public void tearDown() {
 		bid = null;
 		bidDto = null;
+		bidListRepository.deleteAll();
 	}
 
 	@Test

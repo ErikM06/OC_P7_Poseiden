@@ -13,5 +13,14 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Component
 public class RuleNameDTO {
+	
+	String name;
+	
+	String description;
+	public RuleNameDTO(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
 
 }

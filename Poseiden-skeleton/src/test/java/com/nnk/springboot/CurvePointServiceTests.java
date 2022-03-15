@@ -58,6 +58,7 @@ public class CurvePointServiceTests {
 	public void tearDown() {
 		curvePoint = null;
 		curvePointDto = null;
+		curvePointRepository.deleteAll();
 	}
 
 	@Test
@@ -77,15 +78,15 @@ public class CurvePointServiceTests {
 	@Test
 	@Transactional
 	public void updateCurvePointTest() {
-		curvePointService.updateCurvePoint(curvePoint.getCurveId(), curvePointDto);
-		CurvePoint retrivedModifiedCurve = curvePointRepository.getById(curvePoint.getCurveId());
+		curvePointService.updateCurvePoint(curvePoint.getId(), curvePointDto);
+		CurvePoint retrivedModifiedCurve = curvePointRepository.getById(curvePoint.getId());
 		assertThat(curvePointDto.getValue() == retrivedModifiedCurve.getValue());
 	}
 
 	@Test
 	public void deleteBidTest() throws Exception {
-		curvePointService.deleteBid(curvePoint.getCurveId());
-		assertFalse(curvePointRepository.existsById(curvePoint.getCurveId()));
+		curvePointService.deleteBid(curvePoint.getId());
+		assertFalse(curvePointRepository.existsById(curvePoint.getId()));
 
 	}
 

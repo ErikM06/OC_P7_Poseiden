@@ -35,4 +35,12 @@ public class RuleName {
 		this.sqlStr = sqlStr;
 		this.sqlPart = sqlPart;
 	}
+
+	public RuleName(String name, String description) {
+		super();
+		this.name = name;
+		this.description = description;
+	}
+	
+	
 }
