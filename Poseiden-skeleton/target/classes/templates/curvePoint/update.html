@@ -13,16 +13,15 @@ xmlns:th="http://www.thymeleaf.org">
 		</div>
 
 		<div class="row">
-			<form action="#" th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}" th:object="${curvePoint}" method="post" class="form-horizontal" style="width: 100%">
-				<input th:field="*{curveId}" id="curveId" name="curveId" placeholder="curveId">
+			<form action="#" th:action="@{/curvePoint/update/{id}(id=${curvePoint.id})}" th:object="${curvePointDto}" method="post" class="form-horizontal" style="width: 100%">
 				<input th:field="*{curveId}" id="curveId" name="curveId" placeholder="curveId">
 				<p th:if="${#fields.hasErrors('curveId')}" th:errorclass="error" th:errors="*{curveId}" />
 				<input th:field="*{term}" id="term" name="term" placeholder="term">
-				
 				<input th:field="*{value}" th:errorclass="fieldError"   id="value" name="value" placeholder="value">
+				<p th:if="${#fields.hasErrors('value')}" th:errorclass="error" th:errors="*{value}" />
 				<td>
-					<button name="Save" class="btn" type="submit" >Save</button>
-					<button name="Cancel" class="btn" th:href="/curvePoint/list" >Cancel</button>
+					<button name="Save" class="btn" type="submit" >Update</button>
+					<button name="Cancel" class="btn" th:href="@{/curvePoint/list}" >Cancel</button>
 				</td>
 			<!--
 			TODO: Create a form to edit the values of CurvePoint, there are 2 buttons: Update data and Cancel to the Curve Point

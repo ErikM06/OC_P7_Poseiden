@@ -13,7 +13,14 @@
 	</div>
 
 	<div class="row">
-		<form action="#" th:action="@{/trade/update/{id}(id=${trade.tradeId})}" th:object="${trade}" method="post" class="form-horizontal" style="width: 100%">
+		<form action="#" th:action="@{/trade/update/{id}(id=${trade.tradeId})}" th:object="${tradeDto}" method="post" class="form-horizontal" style="width: 100%">
+				<input th:field="*{account}" id="account" name="account" placeholder="account">
+				<input th:field="*{type}" id="type" name="type" placeholder="type">
+				<input th:field="*{buyQuantity}" id="buyQuantity" name="buyQuantity" placeholder="buyQuantity">
+				<td>
+					<button name="Save" class="btn" type="submit" >Update</button>
+					<button name="Cancel" class="btn" th:href="@{/trade/list}" >Cancel</button>
+				</td>
 			<!--
 			TODO: Create a form to edit the values of Trade, there are 2 buttons: Update data and Cancel to the Trade List
 			 -->

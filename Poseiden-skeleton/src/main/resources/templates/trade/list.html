@@ -37,6 +37,16 @@
 				</tr>
 			</thead>
 			<tbody>
+				<tr th:each="trade : ${ratingLs}">
+						<td> <span th:text=${trade.tradeId}></span></td>
+						<td> <span th:text=${trade.account}></span></td>
+						<td> <span th:text=${trade.type}></span></td>
+						<td> <span th:text=${trade.buyQuantity}></span></td>
+						<td> 
+							<a class="btn btn-primary" th:href="@{/trade/update/{id}(id=${trade.tradeId})}" role="button"> Edit</a> 
+							<a class="btn btn-primary" th:href="@{/trade/delete/{id}(id=${trade.tradeId})}" role="button"> Delete</a> 
+						</td>
+						</tr>
 			<!-- TODO: Show all Trade to the table, the Action column will have Edit & Delete buttons -->
 			</tbody>
 		</table>

@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
-	  xmlns:th="http://www.thymeleaf.org">
+xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>Home</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" >
+	<meta charset="utf-8"/>
+	<title>Home</title>
+	<link rel="stylesheet" href="../../css/bootstrap.min.css" >
 </head>
 <body>
-<div class="container">
+	<div class="container">
 
-	<div class="row">
-		<h2>Add New Trade</h2>
-	</div>
+		<div class="row">
+			<h2>Add New Trade</h2>
+		</div>
 
-	<div class="row">
-		<form action="#" th:action="@{/trade/validate}" th:object="${trade}" method="post" class="form-horizontal" style="width: 100%">
+		<div class="row">
+			<form action="#" th:action="@{/trade/validate}" th:object="${trade}" method="post" class="form-horizontal" style="width: 100%">
+				<input th:field="*{account}" id="account" name="account" placeholder="account">
+				<input th:field="*{type}" id="type" name="type" placeholder="type">
+				<input th:field="*{buyQuantity}" id="buyQuantity" name="buyQuantity" placeholder="buyQuantity">
+				<td>
+					<button name="Save" class="btn" type="submit" >Save</button>
+					<button name="Cancel" class="btn" th:href="@{/trade/list}" >Cancel</button>
+				</td>
 			<!--
 			TODO: Create a form to input the values of Trade, there are 2 buttons: Save data and Cancel to the list Trade
-			 -->
+		-->
 
-		</form>
-	</div>
+	</form>
+</div>
 
 </div>
 </body>

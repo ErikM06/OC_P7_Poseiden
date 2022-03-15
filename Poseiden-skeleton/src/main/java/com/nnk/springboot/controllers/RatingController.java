@@ -50,7 +50,6 @@ public class RatingController {
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get Rating by Id and to model then show to the form
     	model.addAttribute("ratingDto", new RatingDTO());
-    	model.addAttribute("rating", iRatingService.getById(id));
         return "rating/update";
     }
 

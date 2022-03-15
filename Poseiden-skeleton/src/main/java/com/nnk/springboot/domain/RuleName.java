@@ -1,19 +1,14 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @Entity
 @Table(name = "rulename")
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+@Data
 public class RuleName {
 
 	@Id

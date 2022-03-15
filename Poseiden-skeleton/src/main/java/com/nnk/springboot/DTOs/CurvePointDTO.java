@@ -1,5 +1,7 @@
 package com.nnk.springboot.DTOs;
 
+import javax.validation.constraints.NotBlank;
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -13,8 +15,9 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Component
 public class CurvePointDTO {
-	
+	@NotBlank(message = "id is mandatory")
 	Integer curveId;
+	@NotBlank(message = "value is mandatory")
 	Double value;
 	Double term;
 	
