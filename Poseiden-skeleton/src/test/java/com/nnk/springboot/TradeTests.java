@@ -64,7 +64,7 @@ public class TradeTests {
 	public void findAllTradeTest() {
 		List<Trade> tradeLs = tradeService.getAllTrade();
 		assertNotNull(tradeLs);
-		assertTrue(tradeLs.size() > 0);
+		assertThat(tradeLs.contains(trade));
 	}
 
 	@Test
@@ -72,7 +72,7 @@ public class TradeTests {
 	public void updateTradeTest() {
 		tradeService.updateTrade(trade.getTradeId(), tradeDTO);
 		Trade retrivedModifiedTrade = tradeRepository.getById(trade.getTradeId());
-		assertThat(tradeDTO.getAccount() == retrivedModifiedTrade.getAccount());
+		assertThat(tradeDTO.getAccount().equals(retrivedModifiedTrade.getAccount()));
 	}
 
 	@Test

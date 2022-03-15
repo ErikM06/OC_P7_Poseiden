@@ -71,7 +71,7 @@ public class RatingServiceTests {
 		
 		List<Rating> ratingLs = ratingService.getAllRating();
 		assertNotNull(ratingLs);
-		assertTrue(ratingLs.size() > 0);
+		assertThat(ratingLs.contains(rating));
 	}
 
 	@Test
@@ -79,7 +79,7 @@ public class RatingServiceTests {
 	public void updateRatingTest() {
 		ratingService.updateRating(rating.getId(), ratingDTO);
 		Rating retrivedModifiedRating = ratingRepository.getById(rating.getId());
-		assertThat(ratingDTO.getMoodysRatingDto() == retrivedModifiedRating.getMoodysRating());
+		assertThat(ratingDTO.getMoodysRatingDto().equals(retrivedModifiedRating.getMoodysRating()));
 	}
 
 	@Test

@@ -65,7 +65,7 @@ public class RuleTests {
 	public void findAllRuleNameTest() {
 		List<RuleName> ruleLs = ruleNameService.getAllRuleName();
 		assertNotNull(ruleLs);
-		assertTrue(ruleLs.size() > 0);
+		assertThat(ruleLs.contains(rule));
 	}
 
 	@Test
@@ -73,7 +73,7 @@ public class RuleTests {
 	public void updateRuleNameTest() {
 		ruleNameService.uptadeRuleName(rule.getId(), ruleNameDTO);
 		RuleName retrivedModifiedRule = ruleNameRepository.getById(rule.getId());
-		assertThat(ruleNameDTO.getName() == retrivedModifiedRule.getName());
+		assertThat(ruleNameDTO.getName().equals(retrivedModifiedRule.getName()));
 	}
 
 	@Test

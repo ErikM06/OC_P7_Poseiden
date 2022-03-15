@@ -73,18 +73,15 @@ public class BidListServiceTest {
 	public void findAllBidTest() {
 		List<BidList> bidList = bidListService.getAllBidList();
 		assertNotNull(bidList);
-		assertTrue(bidList.size() > 0);
+		assertThat(bidList.contains(bid));
 	}
 
 	@Test
 	@Transactional
-	/*
-	 * check for transaction
-	 */
 	public void updateBidTest() {
 		bidListService.uptadeBid(bid.getBidListId(), bidDto);
 		BidList retrivedModifiedBid = bidListRepository.getById(bid.getBidListId());
-		assertThat(bidDto.getAccount() == retrivedModifiedBid.getAccount());
+		assertThat(bidDto.getAccount().equals(retrivedModifiedBid.getAccount()));
 	}
 
 	@Test

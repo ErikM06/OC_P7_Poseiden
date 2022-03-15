@@ -72,7 +72,7 @@ public class CurvePointServiceTests {
 	public void findAllBidTest() {
 		List<CurvePoint> curveList = curvePointService.getAllCurvePoint();
 		assertNotNull(curveList);
-		assertTrue(curveList.size() > 0);
+		assertThat(curveList.contains(curvePoint));
 	}
 
 	@Test
@@ -80,7 +80,7 @@ public class CurvePointServiceTests {
 	public void updateCurvePointTest() {
 		curvePointService.updateCurvePoint(curvePoint.getId(), curvePointDto);
 		CurvePoint retrivedModifiedCurve = curvePointRepository.getById(curvePoint.getId());
-		assertThat(curvePointDto.getValue() == retrivedModifiedCurve.getValue());
+		assertThat(curvePointDto.getValue().equals(retrivedModifiedCurve.getValue()));
 	}
 
 	@Test
