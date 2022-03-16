@@ -93,10 +93,8 @@ CREATE TABLE IF NOT EXISTS Users (
   password VARCHAR(125),
   fullname VARCHAR(125),
   role VARCHAR(125),
-
-  PRIMARY KEY (Id)
+  PRIMARY KEY (Id) 
 );
-
 
 insert into Users(fullname, username, password, role) 
 Select "Administrator", "admin", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "ADMIN" 
@@ -105,4 +103,6 @@ WHERE NOT EXISTS (SELECT * FROM users WHERE username = "admin");
 insert into Users(fullname, username, password, role) 
 Select "User", "user", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "USER"
 WHERE NOT EXISTS (SELECT * FROM users WHERE username = "user");
+
+
 

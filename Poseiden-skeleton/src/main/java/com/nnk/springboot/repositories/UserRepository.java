@@ -6,9 +6,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(collectionResourceRel = "users", path="users")
-public interface UserRepository extends JpaRepository<User, Integer>, JpaSpecificationExecutor<User> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
 	
 	@Query ("Select u FROM User u WHERE username = ?1")
 	User findByUsername(String username);
