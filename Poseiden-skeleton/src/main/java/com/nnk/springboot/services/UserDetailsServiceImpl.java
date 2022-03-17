@@ -21,27 +21,27 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	 * problemes de comprehension, le private final empêche le changement de la
 	 * methode pour pouvoir respecter l'accessibilité de la class?
 	 */
-	@Autowired
+	Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+	
 	private final IUserService userService;
-
+	
+	
 	private UserDetailsServiceImpl(UserService userService) {
 		this.userService = userService;
 	}
 
-	Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
-
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = this.userService.getUserFromByUsername(username);
+		User user =this.userService.getUserFromByUsername(username);
+		
 
 		if (user == null) {
 			throw new UsernameNotFoundException(username + "/s not found");
 		}
-		logger.info("loading User by username: {} ", username.toString(), user.getPassword().toString());
+		logger.info("loading User by username: {} ", username.toString(),"and password {}", user.getPassword().toString());
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(user.getRole()));
-		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-				authorities);
+		return user;
 	}
 
 }

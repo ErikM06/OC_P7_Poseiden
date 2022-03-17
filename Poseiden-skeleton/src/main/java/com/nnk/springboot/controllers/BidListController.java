@@ -16,6 +16,7 @@ import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
 
 @Controller
+@RequestMapping
 public class BidListController {
 
 	@Autowired

@@ -33,7 +33,8 @@
 	<root level="INFO">
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="LOGS" />
-	
 	</root>	
+	<logger name="com.nnk.springboot.config.WebSecurityConfig.java" ref="CONSOLE"></logger>
+	<logger name="com.nnk.springboot.controllers.LoginController" ref="CONSOLE"></logger>
 
 </configuration>

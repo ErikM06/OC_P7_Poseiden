@@ -16,11 +16,10 @@ import lombok.NoArgsConstructor;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "users")
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class User implements UserDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private String username;
@@ -30,6 +29,19 @@ public class User implements UserDetails {
 	private String fullname;
 
 	private String role;
+	
+	public User(String username, String password, String fullname, String role) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
+		this.role = role;
+	}
+	
+	public User()
+	{
+		
+	}
 
 	public Integer getId() {
 		return id;
@@ -101,4 +113,5 @@ public class User implements UserDetails {
 		return true;
 	}
 
+	
 }
