@@ -7,9 +7,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.nnk.springboot.DTOs.UserDTO;
+import com.nnk.springboot.config.WebSecurityConfig;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.interfaces.IUserService;
 import com.nnk.springboot.repositories.UserRepository;
+import com.nnk.springboot.util.UserMapper;
 
 @Service
 public class UserService implements IUserService {
@@ -18,7 +21,7 @@ public class UserService implements IUserService {
 	UserRepository userRepo;
 	
 	@Autowired
-	PasswordEncoder encoder;
+	UserMapper mapper;
 	
 	@Override
 	public User getUserFromByUsername(String username)  {
@@ -26,10 +29,11 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public User saveUserWithEncodedPassword(User user) {
-		User userToSave = user;
-		encoder.encode(userToSave.getPassword());
-		return userRepo.save(userToSave);
+	public User saveUser(UserDTO userDto) {
+		User user = mapper.mapToUser(userDto);
+		
+		// encoder.encode(userToSave.getPassword());
+		return userRepo.save(user);
 	}
 
 	@Override
@@ -37,6 +41,26 @@ public class UserService implements IUserService {
 		// TODO Auto-generated method stub
 		return userRepo.findAll();
 	}
+
+	@Override
+	public User findUserById(Integer id) {
+		// TODO Auto-generated method stub
+		return userRepo.getById(id);
+	}
+
+	@Override
+	public User updateUser(Integer id, UserDTO userDto) {
+		User user = userRepo.getById(id);
+		mapper.updateUserWithUserDto(userDto, user);
+		return userRepo.save(user);
+	}
+
+	@Override
+	public void deleteUser(Integer id) {
+		userRepo.deleteById(id);
+	}
+	
+	
 	
 	
 

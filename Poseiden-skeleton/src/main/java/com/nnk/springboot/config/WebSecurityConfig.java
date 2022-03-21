@@ -39,13 +39,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/","/user/**").permitAll()
-				.antMatchers( "/bidList/**","/curvePoint/**","/rating/**","/ruleName/**","/trade/**").authenticated()
+				.antMatchers("/").permitAll()
+				.antMatchers("/user/**", "/bidList/**","/curvePoint/**","/rating/**","/ruleName/**","/trade/**").authenticated()
 				.antMatchers("/admin/**").hasRole("ADMIN")
-				.and()
+				
+		        .and()
 				.formLogin().loginPage("/app/login").permitAll()
-				.defaultSuccessUrl("/bidlist/list")
+				.defaultSuccessUrl("/bidList/list")
 				.failureUrl("/app/login?error=true")
+				.and()
+		        .oauth2Login()
 				.and().logout().invalidateHttpSession(true).permitAll().logoutSuccessUrl("/");
 	
 		// désactivation de la protection CSRF

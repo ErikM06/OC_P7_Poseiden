@@ -2,6 +2,8 @@ package com.nnk.springboot.DTOs;
 
 
 
+import javax.validation.constraints.Digits;
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -22,6 +24,7 @@ public class BidListDTO {
 	
 	String type;
 	
+	@Digits(integer = 8, fraction = 2, message = "Must be a number!")
 	Double bidQuantity;
 
 	public BidListDTO(String account, String type, Double bidQuantity) {

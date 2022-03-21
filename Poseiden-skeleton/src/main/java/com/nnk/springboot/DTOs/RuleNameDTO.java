@@ -17,6 +17,7 @@ public class RuleNameDTO {
 	String name;
 	
 	String description;
+	
 	public RuleNameDTO(String name, String description) {
 		super();
 		this.name = name;
