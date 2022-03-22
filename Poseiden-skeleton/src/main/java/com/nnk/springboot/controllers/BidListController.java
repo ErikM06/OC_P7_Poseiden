@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
-import com.nnk.springboot.util.OAuth2LoggedEmail;
 
 @Controller
 @RequestMapping
@@ -28,23 +27,17 @@ public class BidListController {
 
 	@Autowired
 	IBidListService iBidList;
-	
-	
-	@Autowired
-	OAuth2LoggedEmail auth2Controller;
-	// TODO: Inject Bid service
-	
-	
+
 	@RequestMapping("/bidList/list")
 	public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
 		// TODO: call service find all bids to show to the view
+		if (principal != null) {
+			model.addAttribute("user", principal);
+			} 
+		model.addAttribute("user");	
 		model.addAttribute("bidList", iBidList.getAllBidList());
 		model.addAttribute("currentUser");
-		if (principal != null) {
-		model.addAttribute("user", auth2Controller.user(principal).get("email"));
-		} else {
-			model.addAttribute("user");
-		}
+		
 
 		return "bidList/list";
 	}

@@ -3,6 +3,8 @@ package com.nnk.springboot.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -24,8 +26,14 @@ public class CurveController {
 	ICurvePointService iCurvePoint;
 
     @RequestMapping("/curvePoint/list")
-    public String home(Model model)
-    {
+    public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
+		// TODO: call service find all bids to show to the view
+		if (principal != null) {
+			model.addAttribute("user", principal.getAttributes().get("email"));
+			} else {
+				model.addAttribute("user");
+			}
+    
         // TODO: find all Curve Point, add to model
     	model.addAttribute("curvePointList",iCurvePoint.getAllCurvePoint());
         return "curvePoint/list";

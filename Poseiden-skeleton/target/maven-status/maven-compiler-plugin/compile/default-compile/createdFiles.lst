@@ -15,7 +15,6 @@ com\nnk\springboot\controllers\LoginController.class
 com\nnk\springboot\domain\Trade.class
 com\nnk\springboot\util\BidListMapper.class
 com\nnk\springboot\interfaces\IUserService.class
-com\nnk\springboot\controllers\OAuth2Controller.class
 com\nnk\springboot\util\RatingMapperImpl.class
 com\nnk\springboot\repositories\UserRepository.class
 com\nnk\springboot\controllers\UserController.class
@@ -27,6 +26,7 @@ com\nnk\springboot\DTOs\BidListDTO.class
 com\nnk\springboot\services\RatingService.class
 com\nnk\springboot\controllers\HomeController.class
 com\nnk\springboot\interfaces\IRuleNameService.class
+com\nnk\springboot\util\OAuth2LoggedEmail.class
 com\nnk\springboot\services\RuleNameService.class
 com\nnk\springboot\domain\User.class
 com\nnk\springboot\DTOs\UserDTO.class

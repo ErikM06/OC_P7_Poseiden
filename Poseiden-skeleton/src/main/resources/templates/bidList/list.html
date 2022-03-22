@@ -18,7 +18,8 @@ xmlns:th="http://www.thymeleaf.org">
 			</div>
 			<div class="col-6 text-right">
 				<form action="#" th:action="@{/user}" th:object="${user}">	
-					<p th:text="${user} ?: ${#httpServletRequest.remoteUser} "></p>
+					<p th:text="${user?.getAttributes()?.get('email')} ?: ${#httpServletRequest.remoteUser} "></p>
+					
 					
 				</form>
 				 
