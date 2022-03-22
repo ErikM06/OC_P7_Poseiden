@@ -15,6 +15,7 @@ com\nnk\springboot\controllers\LoginController.class
 com\nnk\springboot\domain\Trade.class
 com\nnk\springboot\util\BidListMapper.class
 com\nnk\springboot\interfaces\IUserService.class
+com\nnk\springboot\controllers\OAuth2Controller.class
 com\nnk\springboot\util\RatingMapperImpl.class
 com\nnk\springboot\repositories\UserRepository.class
 com\nnk\springboot\controllers\UserController.class

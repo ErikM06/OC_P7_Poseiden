@@ -1,12 +1,8 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
 
-import java.security.Principal;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +15,6 @@ public class LoginController {
     @Autowired
     private UserRepository userRepository;
     
-    
-
     @GetMapping("login")
     public String login() {
     	
@@ -43,15 +37,5 @@ public class LoginController {
         mav.setViewName("403");
         return mav;
     }
-    
-    private StringBuffer getUserByOAuthToken (Principal user) {
-    	
-    	UsernamePasswordAuthenticationToken userToken =(UsernamePasswordAuthenticationToken)user;
-    	if (userToken.isAuthenticated()) {
-    		
-    		
-    	}
-		return null;
-    	
-    }
+ 
 }

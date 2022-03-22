@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -40,15 +39,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/").permitAll()
-				.antMatchers("/user/**", "/bidList/**","/curvePoint/**","/rating/**","/ruleName/**","/trade/**").authenticated()
-				.antMatchers("/admin/**").hasRole("ADMIN")
-				
+				.antMatchers( "/bidList/**","/curvePoint/**","/rating/**","/ruleName/**","/trade/**").authenticated()
+				.antMatchers("/admin/**","/user/**").hasRole("ADMIN")
 		        .and()
-				.formLogin().loginPage("/app/login").permitAll()
+				.formLogin().loginPage("/app/login").permitAll().defaultSuccessUrl("/bidList/list")
+				.and()
+				.oauth2Login()
 				.defaultSuccessUrl("/bidList/list")
 				.failureUrl("/app/login?error=true")
-				.and()
-		        .oauth2Login()
+				
+		        
 				.and().logout().invalidateHttpSession(true).permitAll().logoutSuccessUrl("/");
 	
 		// désactivation de la protection CSRF

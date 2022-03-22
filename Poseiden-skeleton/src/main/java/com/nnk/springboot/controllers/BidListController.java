@@ -2,7 +2,11 @@ package com.nnk.springboot.controllers;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,33 +18,47 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
+import com.nnk.springboot.util.OAuth2LoggedEmail;
 
 @Controller
 @RequestMapping
 public class BidListController {
 
+	Logger logger = LoggerFactory.getLogger(BidListController.class);
+
 	@Autowired
 	IBidListService iBidList;
 	
+	
+	@Autowired
+	OAuth2LoggedEmail auth2Controller;
 	// TODO: Inject Bid service
-
+	
+	
 	@RequestMapping("/bidList/list")
-	public String home(Model model) {
+	public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
 		// TODO: call service find all bids to show to the view
 		model.addAttribute("bidList", iBidList.getAllBidList());
+		model.addAttribute("currentUser");
+		if (principal != null) {
+		model.addAttribute("user", auth2Controller.user(principal).get("email"));
+		} else {
+			model.addAttribute("user");
+		}
+
 		return "bidList/list";
 	}
 
 	@GetMapping("/bidList/add")
-	public String addBidForm( Model model) {
+	public String addBidForm(Model model) {
 		model.addAttribute("bidList", new BidListDTO());
 		return "bidList/add";
 	}
 
 	@PostMapping("/bidList/validate")
-	public String validate( @ModelAttribute("bidlist") @Valid BidListDTO bidDto, BindingResult result, Model model) {
+	public String validate(@ModelAttribute("bidlist") @Valid BidListDTO bidDto, BindingResult result, Model model) {
 		// TODO: check data valid and save to db, after saving return bid list
-		
+
 		if (result.hasErrors()) {
 			return "bidList/add";
 		}
@@ -58,17 +76,17 @@ public class BidListController {
 	}
 
 	@PostMapping("/bidList/update/{id}")
-	public String updateBid(@PathVariable("id") Integer id,@ModelAttribute("bidListDto") @Valid BidListDTO bidListDto, 
+	public String updateBid(@PathVariable("id") Integer id, @ModelAttribute("bidListDto") @Valid BidListDTO bidListDto,
 			BindingResult result, Model model) {
 		// TODO: check required fields, if valid call service to update Bid and return
 		// list Bid
 		if (result.hasErrors()) {
 			return "bidList/update";
 		}
-		//check if bid existe
-		
+		// check if bid existe
+
 		iBidList.uptadeBid(id, bidListDto);
-		
+
 		return "redirect:/bidList/list";
 	}
 

@@ -17,7 +17,12 @@ xmlns:th="http://www.thymeleaf.org">
 				<a href="/ruleName/list">Rule</a>
 			</div>
 			<div class="col-6 text-right">
-				Logged in user: <b th:inline="text"  class="user"> [[${#httpServletRequest.remoteUser}]] </b>
+				<form action="@{/user}" th:object="${user}">	
+					<div th:unless="*{user.isEmpty}"> Logged in user: <span th:inline="*{user}"></span></div>
+					<div th:if="*{user.isEmpty}"> Logged in user: <b th:inline="text"  class="user"> [[${#httpServletRequest.remoteUser}]] </b></div>
+				</form>
+				 
+				 
 				<form th:action="@{/app-logout}" method="POST">
 					<input type="submit" value="Logout"/>
 				</form>
