@@ -22,8 +22,8 @@ xmlns:th="http://www.thymeleaf.org">
 				<p th:if="${#fields.hasErrors('value')}" th:errorclass="error" th:errors="*{value}" />
 
 				<td>
-					<button name="Save" class="btn" type="submit" >Save</button>
-					<button name="Cancel" class="btn" th:href="@{/curvePoint/list}" >Cancel</button>
+					<button name="Save" class="btn btn-primary" type="submit" >Save</button>
+					<button name="Cancel" class="btn btn-primary" th:href="@{/curvePoint/list}" >Cancel</button>
 				</td>
 			<!--
 			TODO: Create a form to input the values of CurvePoint, there are 2 buttons: Save data and Cancel to the list CurvePoint

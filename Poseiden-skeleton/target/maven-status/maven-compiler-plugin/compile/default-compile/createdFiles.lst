@@ -26,7 +26,6 @@ com\nnk\springboot\DTOs\BidListDTO.class
 com\nnk\springboot\services\RatingService.class
 com\nnk\springboot\controllers\HomeController.class
 com\nnk\springboot\interfaces\IRuleNameService.class
-com\nnk\springboot\util\OAuth2LoggedEmail.class
 com\nnk\springboot\services\RuleNameService.class
 com\nnk\springboot\domain\User.class
 com\nnk\springboot\DTOs\UserDTO.class

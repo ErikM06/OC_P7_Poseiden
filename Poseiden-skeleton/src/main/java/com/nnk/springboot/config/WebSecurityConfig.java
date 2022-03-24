@@ -47,8 +47,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.oauth2Login()
 				.defaultSuccessUrl("/bidList/list")
 				.failureUrl("/app/login?error=true")
-				
-		        
 				.and().logout().invalidateHttpSession(true).permitAll().logoutSuccessUrl("/");
 	
 		// désactivation de la protection CSRF

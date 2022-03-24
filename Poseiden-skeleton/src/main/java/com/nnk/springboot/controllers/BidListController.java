@@ -1,5 +1,7 @@
 package com.nnk.springboot.controllers;
 
+import java.nio.file.attribute.UserPrincipalNotFoundException;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -15,7 +17,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
 
@@ -27,17 +28,15 @@ public class BidListController {
 
 	@Autowired
 	IBidListService iBidList;
+	
 
 	@RequestMapping("/bidList/list")
-	public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
+	public String home(Model model,  @AuthenticationPrincipal OAuth2User principal) throws UserPrincipalNotFoundException {
 		// TODO: call service find all bids to show to the view
-		if (principal != null) {
-			model.addAttribute("user", principal);
-			} 
-		model.addAttribute("user");	
+		if (principal!=null) {
+		model.addAttribute("currentUser",principal.getAttributes().get("email"));
+		}
 		model.addAttribute("bidList", iBidList.getAllBidList());
-		model.addAttribute("currentUser");
-		
 
 		return "bidList/list";
 	}

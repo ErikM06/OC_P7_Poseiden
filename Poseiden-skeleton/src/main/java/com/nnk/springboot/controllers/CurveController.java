@@ -29,11 +29,8 @@ public class CurveController {
     public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
 		// TODO: call service find all bids to show to the view
 		if (principal != null) {
-			model.addAttribute("user", principal.getAttributes().get("email"));
-			} else {
-				model.addAttribute("user");
-			}
-    
+			model.addAttribute("currentUser", principal.getAttributes().get("email"));
+		}
         // TODO: find all Curve Point, add to model
     	model.addAttribute("curvePointList",iCurvePoint.getAllCurvePoint());
         return "curvePoint/list";
@@ -48,7 +45,7 @@ public class CurveController {
     @PostMapping("/curvePoint/validate")
     public String validate(@ModelAttribute("curvePoint") @Valid CurvePoint curvePoint, BindingResult result, Model model) {
     	if (result.hasErrors()) {
-    		return "curvePoint/add";
+    		return "curvePoint/add?error=true";
     	}
     	iCurvePoint.saveBid(curvePoint);
         // TODO: check data valid and save to db, after saving return Curve list

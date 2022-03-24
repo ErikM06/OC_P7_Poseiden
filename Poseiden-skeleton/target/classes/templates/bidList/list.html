@@ -17,12 +17,7 @@ xmlns:th="http://www.thymeleaf.org">
 				<a th:href="@{/ruleName/list}">Rule</a>&nbsp;|&nbsp;
 			</div>
 			<div class="col-6 text-right">
-				<form action="#" th:action="@{/user}" th:object="${user}">	
-					<p th:text="${user?.getAttributes()?.get('email')} ?: ${#httpServletRequest.remoteUser} "></p>
-					
-					
-				</form>
-				 
+				<p th:text="${currentUser} ?: ${#httpServletRequest.remoteUser} "></p>
 				<form th:action="@{/app-logout}" method="POST">
 					<input type="submit" value="Logout"/>
 				</form>
@@ -51,11 +46,11 @@ xmlns:th="http://www.thymeleaf.org">
 							<a class="btn btn-primary" th:href="@{/bidList/update/{id}(id=${bid.bidListId})}" role="button"> Edit</a> 
 							<a class="btn btn-primary" th:href="@{/bidList/delete/{id}(id=${bid.bidListId})}" role="button"> Delete</a> 
 						</td>
-						</tr>
-						<!-- TODO: Show all Bids to the table, the Action column will have Edit & Delete buttons -->
-					</tbody>
-				</table>
-			</div>
+					</tr>
+					<!-- TODO: Show all Bids to the table, the Action column will have Edit & Delete buttons -->
+				</tbody>
+			</table>
 		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>

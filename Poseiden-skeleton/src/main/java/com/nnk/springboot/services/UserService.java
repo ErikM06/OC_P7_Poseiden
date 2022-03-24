@@ -31,7 +31,6 @@ public class UserService implements IUserService {
 	@Override
 	public User saveUser(UserDTO userDto) {
 		User user = mapper.mapToUser(userDto);
-		
 		// encoder.encode(userToSave.getPassword());
 		return userRepo.save(user);
 	}
