@@ -338,3 +338,11 @@
 				o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
 24-03-2022 13:48:23.013 [http-nio-8080-exec-1] WARN 
 				o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [131] milliseconds.
+24-03-2022 15:57:38.441 [RMI TCP Connection(136)-127.0.0.1] INFO 
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+24-03-2022 15:57:38.587 [RMI TCP Connection(136)-127.0.0.1] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+24-03-2022 15:57:38.590 [RMI TCP Connection(136)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+24-03-2022 15:57:43.301 [RMI TCP Connection(136)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.

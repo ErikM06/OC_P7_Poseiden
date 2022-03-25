@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
 
@@ -48,15 +50,18 @@ public class BidListController {
 	}
 
 	@PostMapping("/bidList/validate")
-	public String validate(@ModelAttribute("bidlist") @Valid BidListDTO bidDto, BindingResult result, Model model) {
+	public ModelAndView validate(@ModelAttribute("bidlist") @Valid BidListDTO bidDto, BindingResult result, Model model) {
 		// TODO: check data valid and save to db, after saving return bid list
 
 		if (result.hasErrors()) {
-			return "bidList/add";
+			ModelAndView mav = new ModelAndView();
+			mav.addObject("error",result);
+			mav.setViewName("bidList/add?error=true");
+			return mav;
 		}
 		iBidList.saveBid(bidDto);
 
-		return "redirect:/bidList/list";
+		return new ModelAndView("redirect:/bidList/list");
 	}
 
 	@GetMapping("/bidList/update/{id}")
