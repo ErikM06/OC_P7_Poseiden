@@ -62,7 +62,7 @@ public class RatingServiceTests {
 	public void saveRatingTest() {
 		Rating ratingToSave = ratingService.saveRating(ratingDTO);
 		assertNotNull(ratingToSave);
-		assertEquals(ratingToSave.getId(), rating.getId());
+		assertEquals(ratingToSave.getFitchRating(), ratingDTO.getFitchRating());
 	
 	}
 

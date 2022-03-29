@@ -57,7 +57,7 @@ public class TradeTests {
 	public void saveTradeTest() {
 		Trade tradeToSave = tradeService.saveTrade(tradeDTO);
 		assertNotNull(tradeToSave);
-		assertEquals(tradeToSave.getAccount(), trade.getAccount());
+		assertEquals(tradeToSave.getAccount(), tradeDTO.getAccount());
 	}
 
 	@Test
