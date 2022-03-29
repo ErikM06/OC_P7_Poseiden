@@ -97,11 +97,11 @@ CREATE TABLE IF NOT EXISTS Users (
 );
 
 insert into Users(fullname, username, password, role) 
-Select "Administrator", "admin", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "ADMIN" 
+Select "Administrator", "admin", "$2a$10$gnoRKMIxMd5a4ofCLi1bOuPjB/b5Fpnm.4WlI/vLvmi2oadutgon6", "ADMIN" 
 WHERE NOT EXISTS (SELECT * FROM users WHERE username = "admin");
 
 insert into Users(fullname, username, password, role) 
-Select "User", "user", "$2a$10$pBV8ILO/s/nao4wVnGLrh.sa/rnr5pDpbeC4E.KNzQWoy8obFZdaa", "USER"
+Select "User", "user", "$2a$10$J8xDvsxo4RY6YVRhdG8HtOaOebH34iFH3WemNWWttNJwaoQmNDGz6", "USER"
 WHERE NOT EXISTS (SELECT * FROM users WHERE username = "user");
 
 
