@@ -19,8 +19,6 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
 @DynamicUpdate
 @SelectBeforeUpdate
 public class CurvePoint {
