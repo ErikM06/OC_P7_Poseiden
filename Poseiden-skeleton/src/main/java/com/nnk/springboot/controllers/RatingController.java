@@ -21,14 +21,12 @@ import customExceptions.CustomIdNotFoundException;
 
 @Controller
 public class RatingController {
-    // TODO: Inject Rating service
 	@Autowired
 	IRatingService iRatingService;
 
     @RequestMapping("/rating/list")
     public String home(Model model, @AuthenticationPrincipal OAuth2User principal)
     {
-        // TODO: find all Rating, add to model
     	if (principal!=null) {
     		model.addAttribute("currentUser",principal.getAttributes().get("email"));
     		}
@@ -44,7 +42,6 @@ public class RatingController {
 
     @PostMapping("/rating/validate")
     public String validate(@ModelAttribute("rating") @Valid RatingDTO ratingDto, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Rating list
     	if (result.hasErrors()) {
     		return "rating/add";
     		}
@@ -54,7 +51,6 @@ public class RatingController {
 
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get Rating by Id and to model then show to the form
     	try {
     	model.addAttribute("rating", iRatingService.getById(id));
     	} catch (CustomIdNotFoundException e) {
@@ -67,7 +63,6 @@ public class RatingController {
     @PostMapping("/rating/update/{id}")
     public String updateRating(@PathVariable("id") Integer id,  @ModelAttribute("ratingDto") @Valid RatingDTO ratingDto,
                              BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Rating and return Rating list
     	if (result.hasErrors()) {
     		return "rating/update?error=true";
     	}
@@ -77,8 +72,6 @@ public class RatingController {
 
     @GetMapping("/rating/delete/{id}")
     public String deleteRating(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Rating by Id and delete the Rating, return to Rating list
-    	model.addAttribute("id", id);
     	iRatingService.deleteRating(id);
         return "redirect:/rating/list";
     }

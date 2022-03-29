@@ -22,15 +22,13 @@ xmlns:th="http://www.thymeleaf.org">
 				<input th:field="*{bidQuantity}" th:errorclass="fieldError"   id="bidQuantity" name="bidQuantity" placeholder="bidQuantity">
 				<p th:if="${#fields.hasErrors('bidQuantity')}" th:errorclass="error" th:errors="*{bidQuantity}" />
 
-
-				<td>
-					<button name="Save" class="btn btn-primary" type="submit" >Save</button>
-					<button name="Cancel" class="btn btn-primary" th:href="@{/bidList/list}" >Cancel</button>
-				</td>
+				<button name="Save" class="btn btn-primary" type="submit" >Save</button>
+				<a name="Cancel" class="btn btn-primary" th:href="@{/bidList/list}" >Cancel</a>
 			<!--
 			TODO: Create a form to input the values of Bid, there are 2 buttons: Save data and Cancel to the list Bid
 		-->
 	</form>
+
 
 	
 </div>

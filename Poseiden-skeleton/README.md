@@ -1,13 +1,18 @@
 # spring-boot
 ## Technical:
 
-1. Framework: Spring Boot v2.0.4
+1. Framework: Spring Boot v2.6.0
 2. Java 8
 3. Thymeleaf
 4. Bootstrap v.4.3.1
 
-## Temp SetUp conf 
-With mvn active profile user : mvn clean package -P{@profile} to apply the @profile  to the app context
+## Active env Profile to run test and app 
+With mvn active profil user : mvn clean package -P{@profile} to apply the @profile  to the app context
+@Profile the env profil
+
+## Spring properties
+
+
 ## Setup with Intellij IDE
 1. Create project from Initializr: File > New > project > Spring Initializr
 2. Add lib repository into pom.xml
@@ -30,3 +35,4 @@ With mvn active profile user : mvn clean package -P{@profile} to apply the @prof
 ## Security
 1. Create user service to load user from  database and place in package com.nnk.springboot.services
 2. Add configuration class and place in package com.nnk.springboot.config
+

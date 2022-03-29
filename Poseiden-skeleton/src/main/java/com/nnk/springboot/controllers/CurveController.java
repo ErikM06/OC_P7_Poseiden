@@ -15,73 +15,67 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.DTOs.CurvePointDTO;
-import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.interfaces.ICurvePointService;
 
 import customExceptions.CustomIdNotFoundException;
 
-
 @Controller
 public class CurveController {
-    // TODO: Inject Curve Point service
+
 	@Autowired
 	ICurvePointService iCurvePoint;
 
-    @RequestMapping("/curvePoint/list")
-    public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
-		// TODO: call service find all bids to show to the view
+	@RequestMapping("/curvePoint/list")
+	public String home(Model model, @AuthenticationPrincipal OAuth2User principal) {
 		if (principal != null) {
 			model.addAttribute("currentUser", principal.getAttributes().get("email"));
 		}
-        // TODO: find all Curve Point, add to model
-    	model.addAttribute("curvePointList",iCurvePoint.getAllCurvePoint());
-        return "curvePoint/list";
-    }
 
-    @GetMapping("/curvePoint/add")
-    public String addCurvePointForm(CurvePointDTO curvePointDto, Model model) {
-    	model.addAttribute("curvePoint", curvePointDto);
-        return "curvePoint/add";
-    }
+		model.addAttribute("curvePointList", iCurvePoint.getAllCurvePoint());
+		return "curvePoint/list";
+	}
 
-    @PostMapping("/curvePoint/validate")
-    public String validate(@ModelAttribute("curvePoint") @Valid CurvePointDTO curvePointDto, BindingResult result, Model model) {
-    	if (result.hasErrors()) {
-    		return "curvePoint/add";
-    	}
-    	iCurvePoint.saveCurvePoint(curvePointDto);
-        // TODO: check data valid and save to db, after saving return Curve list
-        return "redirect:/curvePoint/list";
-    }
+	@GetMapping("/curvePoint/add")
+	public String addCurvePointForm(CurvePointDTO curvePointDto, Model model) {
+		model.addAttribute("curvePoint", curvePointDto);
+		return "curvePoint/add";
+	}
 
-    @GetMapping("/curvePoint/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get CurvePoint by Id and to model then show to the form
-    	try {
-    	model.addAttribute("curvePoint", iCurvePoint.getCurvePointById(id)); }
-    	catch (CustomIdNotFoundException e) {
-    		model.addAttribute("error", e.getMessage());
-    	}
-    	model.addAttribute("curvePointDto", new CurvePointDTO()); 
-        return "curvePoint/update";
-    }
+	@PostMapping("/curvePoint/validate")
+	public String validate(@ModelAttribute("curvePoint") @Valid CurvePointDTO curvePointDto, BindingResult result,
+			Model model) {
+		if (result.hasErrors()) {
+			return "curvePoint/add";
+		}
+		iCurvePoint.saveCurvePoint(curvePointDto);
+		return "redirect:/curvePoint/list";
+	}
 
-    @PostMapping("/curvePoint/update/{id}")
-    public String updateCurvePoint(@PathVariable("id") Integer id, @ModelAttribute("curvePointDto") @Valid CurvePointDTO curvePointDTO,
-                             BindingResult result, Model model) {
-    	if (result.hasErrors()) {
-    		return "curvePoint/update";
-    	}
-    	iCurvePoint.updateCurvePoint(id, curvePointDTO);
-        // TODO: check required fields, if valid call service to update Curve and return Curve list
-        return "redirect:/curvePoint/list";
-    }
+	@GetMapping("/curvePoint/update/{id}")
+	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
+		try {
+			model.addAttribute("curvePoint", iCurvePoint.getCurvePointById(id));
+		} catch (CustomIdNotFoundException e) {
+			model.addAttribute("error", e.getMessage());
+		}
+		model.addAttribute("curvePointDto", new CurvePointDTO());
+		return "curvePoint/update";
+	}
 
-    @GetMapping("/curvePoint/delete/{id}")
-    public String deleteCurvePoint(@PathVariable("id") Integer id, Model model) {
-    	model.addAttribute("id", id);
-    	iCurvePoint.deleteCurvePoint(id);
-        // TODO: Find Curve by Id and delete the Curve, return to Curve list
-        return "redirect:/curvePoint/list";
-    }
+	@PostMapping("/curvePoint/update/{id}")
+	public String updateCurvePoint(@PathVariable("id") Integer id,
+			@ModelAttribute("curvePointDto") @Valid CurvePointDTO curvePointDTO, BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return "curvePoint/update";
+		}
+		iCurvePoint.updateCurvePoint(id, curvePointDTO);
+
+		return "redirect:/curvePoint/list";
+	}
+
+	@GetMapping("/curvePoint/delete/{id}")
+	public String deleteCurvePoint(@PathVariable("id") Integer id, Model model) {
+		iCurvePoint.deleteCurvePoint(id);
+		return "redirect:/curvePoint/list";
+	}
 }

@@ -23,7 +23,7 @@ xmlns:th="http://www.thymeleaf.org">
 				<p th:if="${#fields.hasErrors('buyQuantity')}" th:errorclass="error" th:errors="*{buyQuantity}" />
 				<td>
 					<button name="Save" class="btn btn-primary" type="submit" >Save</button>
-					<button name="Cancel" class="btn btn-primary" th:href="@{/trade/list}" >Cancel</button>
+					<a name="Cancel" class="btn btn-primary" th:href="@{/trade/list}" >Cancel</a>
 				</td>
 			<!--
 			TODO: Create a form to input the values of Trade, there are 2 buttons: Save data and Cancel to the list Trade

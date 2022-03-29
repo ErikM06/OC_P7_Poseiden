@@ -34,7 +34,6 @@ public class BidListController {
 	@RequestMapping("/bidList/list")
 	public String home(Model model, @AuthenticationPrincipal OAuth2User principal)
 			throws UserPrincipalNotFoundException {
-		// TODO: call service find all bids to show to the view
 		if (principal != null) {
 			model.addAttribute("currentUser", principal.getAttributes().get("email"));
 		}
@@ -51,7 +50,7 @@ public class BidListController {
 
 	@PostMapping("/bidList/validate")
 	public String validate(@ModelAttribute("bidList") @Valid BidListDTO bidDto, BindingResult result, Model model) {
-		// TODO: check data valid and save to db, after saving return bid list
+
 		if (result.hasErrors()) {
 			return "bidList/add";
 		}
@@ -61,9 +60,9 @@ public class BidListController {
 
 	@GetMapping("/bidList/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-		// TODO: get Bid by Id and to model then show to the form
+
 		try {
-		model.addAttribute("bidList", iBidList.getById(id));
+			model.addAttribute("bidList", iBidList.getById(id));
 		} catch (CustomIdNotFoundException e) {
 			model.addAttribute("error", e.getMessage());
 		}
@@ -74,12 +73,10 @@ public class BidListController {
 	@PostMapping("/bidList/update/{id}")
 	public String updateBid(@PathVariable("id") Integer id, @ModelAttribute("bidListDto") @Valid BidListDTO bidListDto,
 			BindingResult result, Model model) {
-		// TODO: check required fields, if valid call service to update Bid and return
-		// list Bid
+
 		if (result.hasErrors()) {
 			return "bidList/update";
 		}
-		// check if bid existe
 
 		iBidList.uptadeBid(id, bidListDto);
 
@@ -88,8 +85,6 @@ public class BidListController {
 
 	@GetMapping("/bidList/delete/{id}")
 	public String deleteBid(@PathVariable("id") Integer id, Model model) {
-		// TODO: Find Bid by Id and delete the bid, return to Bid list
-		model.addAttribute("id", id);
 		iBidList.deleteBid(id);
 		return "redirect:/bidList/list";
 	}

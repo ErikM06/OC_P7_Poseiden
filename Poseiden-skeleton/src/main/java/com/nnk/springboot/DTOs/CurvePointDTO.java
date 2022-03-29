@@ -1,20 +1,15 @@
 package com.nnk.springboot.DTOs;
 
 import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 @NoArgsConstructor
 @Data
-@ToString
-@EqualsAndHashCode
 @Component
 public class CurvePointDTO {
 	@NotNull(message = "id is mandatory")

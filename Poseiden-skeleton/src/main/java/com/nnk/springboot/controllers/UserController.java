@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.DTOs.UserDTO;
-import com.nnk.springboot.domain.User;
 import com.nnk.springboot.interfaces.IUserService;
 
 @Controller
@@ -37,7 +36,7 @@ public class UserController {
 		model.addAttribute("userDto", new UserDTO());
 		return "user/add";
 	}
-	//paul password : BlablaazdadDAD0159()%
+	
 	@PostMapping("/user/validate")
 	public String validate(@ModelAttribute("userDto") @Valid UserDTO userDto, BindingResult result, Model model) {
 		if (!result.hasErrors()) {	

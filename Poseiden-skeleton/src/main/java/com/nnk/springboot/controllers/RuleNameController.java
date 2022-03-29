@@ -21,7 +21,6 @@ import customExceptions.CustomIdNotFoundException;
 
 @Controller
 public class RuleNameController {
-	// TODO: Inject RuleName service
 	@Autowired
 	IRuleNameService ruleNameService;
 
@@ -42,7 +41,7 @@ public class RuleNameController {
 
 	@PostMapping("/ruleName/validate")
 	public String validate(@ModelAttribute("ruleNameDto") @Valid RuleNameDTO ruleNameDto, BindingResult result, Model model) {
-		// TODO: check data valid and save to db, after saving return RuleName list
+	
 		if (result.hasErrors()) {
 			return "ruleName/add";
 		}

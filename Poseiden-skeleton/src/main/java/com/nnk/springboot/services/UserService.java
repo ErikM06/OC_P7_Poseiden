@@ -3,12 +3,9 @@ package com.nnk.springboot.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.nnk.springboot.DTOs.UserDTO;
-import com.nnk.springboot.config.WebSecurityConfig;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.interfaces.IUserService;
 import com.nnk.springboot.repositories.UserRepository;

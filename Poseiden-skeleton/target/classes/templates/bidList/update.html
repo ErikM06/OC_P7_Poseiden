@@ -22,10 +22,10 @@
 				<p th:if="${#fields.hasErrors('bidQuantity')}" th:errorclass="error" th:errors="*{bidQuantity}" />
 
 
-				<td>
+				
 					<button name="Save" class="btn btn-primary" type="submit" >Update</button>
-					<button name="Cancel" class="btn btn-primary" th:href="@{/bidList/list}" >Cancel</button>
-				</td>
+					<a name="Cancel" class="btn btn-primary" th:href="@{/bidList/list}" >Cancel</a>
+				
 			<!--
 			TODO: Create a form to edit the values of Bid, there are 2 buttons: Update data and Cancel to the list Bid
 			 -->

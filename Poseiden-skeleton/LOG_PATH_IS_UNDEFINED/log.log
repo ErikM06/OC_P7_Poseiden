@@ -19007,3 +19007,889 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 				com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
 29-03-2022 12:56:45.602 [SpringApplicationShutdownHook] INFO 
 				com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+29-03-2022 14:31:29.679 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:31:29.681 [main] INFO 
+				com.nnk.springboot.Application.logStarting - Starting Application using Java 11 on DESKTOP-Q0H09QF with PID 432 (C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:31:29.683 [main] INFO 
+				com.nnk.springboot.Application.logStartupProfileInfo - The following profiles are active: dev
+29-03-2022 14:31:30.448 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:31:30.503 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 47 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:31:30.982 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-03-2022 14:31:30.990 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:31:30.990 [main] INFO 
+				o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-03-2022 14:31:30.990 [main] INFO 
+				o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.55]
+29-03-2022 14:31:31.086 [main] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-03-2022 14:31:31.086 [main] INFO 
+				o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1370 ms
+29-03-2022 14:31:31.346 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:31:31.469 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:31:31.546 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:31:31.610 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:31:31.739 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:31:31.842 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:31:32.404 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:31:32.411 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:31:32.475 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:31:32.853 [main] WARN 
+				o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'userDetailsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsServiceImpl' defined in file [C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes\com\nnk\springboot\services\UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService': Unsatisfied dependency expressed through field 'mapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.util.UserMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+29-03-2022 14:31:32.854 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:31:32.856 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:31:32.864 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+29-03-2022 14:31:32.866 [main] INFO 
+				o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+29-03-2022 14:31:32.878 [main] INFO 
+				o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+29-03-2022 14:31:32.896 [main] ERROR
+				o.s.b.d.LoggingFailureAnalysisReporter.report - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field mapper in com.nnk.springboot.services.UserService required a bean of type 'com.nnk.springboot.util.UserMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.nnk.springboot.util.UserMapper' in your configuration.
+
+29-03-2022 14:31:51.634 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.PasswordEncodeTest], using SpringBootContextLoader
+29-03-2022 14:31:51.640 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.PasswordEncodeTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:51.641 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.PasswordEncodeTest]: PasswordEncodeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:51.726 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.PasswordEncodeTest
+29-03-2022 14:31:51.811 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:51.833 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@459f7aa3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7cc586a8, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7db534f2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@44a2b17b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7a56812e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a76b80a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7eb01b12, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2f4854d6, org.springframework.test.context.event.EventPublishingTestExecutionListener@61d9efe0, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@7e70bd39, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@e6516e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6de54b40, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@43ed0ff3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@388ffbc2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@a50b09c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4da855dd, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6691490c]
+29-03-2022 14:31:51.868 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.PasswordEncodeTest], using SpringBootContextLoader
+29-03-2022 14:31:51.869 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.PasswordEncodeTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:51.869 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.PasswordEncodeTest]: PasswordEncodeTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:51.871 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.PasswordEncodeTest
+29-03-2022 14:31:51.873 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:51.874 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@63f34b70, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@641856, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@1b58ff9e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2f66e802, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@56b78e55, org.springframework.test.context.support.DirtiesContextTestExecutionListener@76318a7d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2a492f2a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3277e499, org.springframework.test.context.event.EventPublishingTestExecutionListener@585811a4, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@22c01ab0, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@411341bd, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4c4d362a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5400db36, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@76b74e9c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2d72f75e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@8ab78bc, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5aa0dbf4]
+29-03-2022 14:31:51.932 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.BidListServiceTest], using SpringBootContextLoader
+29-03-2022 14:31:51.933 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.BidListServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:51.934 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.BidListServiceTest]: BidListServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:51.937 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.BidListServiceTest
+29-03-2022 14:31:51.939 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:51.940 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1556f2dd, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@35e52059, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@62577d6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@49bd54f7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6b5f8707, org.springframework.test.context.support.DirtiesContextTestExecutionListener@772485dd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5a12c728, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@79ab3a71, org.springframework.test.context.event.EventPublishingTestExecutionListener@6e5bfdfc, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@3d829787, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@71652c98, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@51bde877, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@60b85ba1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@492fc69e, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@117632cf, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2fb68ec6, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@d71adc2]
+29-03-2022 14:31:52.206 [main] INFO 
+				c.nnk.springboot.BidListServiceTest.logStarting - Starting BidListServiceTest using Java 11 on DESKTOP-Q0H09QF with PID 14748 (started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:31:52.207 [main] INFO 
+				c.nnk.springboot.BidListServiceTest.logStartupProfileInfo - The following profiles are active: test
+29-03-2022 14:31:52.217 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:31:53.121 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:31:53.196 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 68 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:31:53.778 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:31:53.835 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:31:53.987 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:31:54.233 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:31:54.404 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:31:54.422 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+29-03-2022 14:31:55.219 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:31:55.228 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:31:55.324 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:31:56.153 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:31:56.210 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:31:56.362 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78de0f6f, org.springframework.security.web.context.SecurityContextPersistenceFilter@488c608a, org.springframework.security.web.header.HeaderWriterFilter@627cb3ed, org.springframework.security.web.authentication.logout.LogoutFilter@5bb90b89, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@5e0b7f58, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@117be84a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@61c42e54, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1e6f7c25, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@588614f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f38545a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f2b608e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16718e1b, org.springframework.security.web.session.SessionManagementFilter@90b9695, org.springframework.security.web.access.ExceptionTranslationFilter@299c86f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3507200d]
+29-03-2022 14:31:56.856 [main] INFO 
+				o.s.b.a.h.H2ConsoleAutoConfiguration.logDataSources - H2 console available at '/h2/'. Database available at 'jdbc:h2:mem:testdb'
+29-03-2022 14:31:57.539 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:31:57.582 [main] INFO 
+				c.nnk.springboot.BidListServiceTest.logStarted - Started BidListServiceTest in 5.594 seconds (JVM running for 6.628)
+29-03-2022 14:31:57.812 [main] INFO 
+				o.s.t.c.t.TransactionContext.startTransaction - Began transaction (1) for test context [DefaultTestContext@7ef706b0 testClass = BidListServiceTest, testInstance = com.nnk.springboot.BidListServiceTest@793577e0, testMethod = updateBidTest@BidListServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@39e75e88 testClass = BidListServiceTest, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@642ebd4c]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@25d6ae3]; rollback [true]
+29-03-2022 14:31:57.981 [main] INFO 
+				o.s.t.c.t.TransactionContext.endTransaction - Rolled back transaction for test: [DefaultTestContext@7ef706b0 testClass = BidListServiceTest, testInstance = com.nnk.springboot.BidListServiceTest@793577e0, testMethod = updateBidTest@BidListServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@39e75e88 testClass = BidListServiceTest, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@642ebd4c]]
+29-03-2022 14:31:58.059 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.CurvePointServiceTests], using SpringBootContextLoader
+29-03-2022 14:31:58.060 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.CurvePointServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:58.060 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.CurvePointServiceTests]: CurvePointServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:58.062 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.CurvePointServiceTests
+29-03-2022 14:31:58.064 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:58.064 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@ebd4486, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@69c413f7, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7d6f094e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6b886e86, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@f758e05, org.springframework.test.context.support.DirtiesContextTestExecutionListener@46e77fb7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@43c73b5c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6b1381fc, org.springframework.test.context.event.EventPublishingTestExecutionListener@48b53f3d, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@3552eb5b, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@4fb53b76, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@38de4f1d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5973d3ec, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7b59f3aa, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1dd1093c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@57bd0b3c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@10164e94]
+29-03-2022 14:31:58.145 [main] INFO 
+				o.s.t.c.t.TransactionContext.startTransaction - Began transaction (1) for test context [DefaultTestContext@5dbd7f00 testClass = CurvePointServiceTests, testInstance = com.nnk.springboot.CurvePointServiceTests@3e9053b3, testMethod = updateCurvePointTest@CurvePointServiceTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@138c2ba testClass = CurvePointServiceTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@a700311, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@25d6ae3]; rollback [true]
+29-03-2022 14:31:58.154 [main] INFO 
+				o.s.t.c.t.TransactionContext.endTransaction - Rolled back transaction for test: [DefaultTestContext@5dbd7f00 testClass = CurvePointServiceTests, testInstance = com.nnk.springboot.CurvePointServiceTests@3e9053b3, testMethod = updateCurvePointTest@CurvePointServiceTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@138c2ba testClass = CurvePointServiceTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@a700311, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+29-03-2022 14:31:58.169 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.RatingServiceTests], using SpringBootContextLoader
+29-03-2022 14:31:58.170 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.RatingServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:58.171 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.RatingServiceTests]: RatingServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:58.172 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RatingServiceTests
+29-03-2022 14:31:58.174 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:58.175 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@17f43f4a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@143abb21, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5813046e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6b1e72a4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5da61ee2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1c0455c4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5c74025e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4467c026, org.springframework.test.context.event.EventPublishingTestExecutionListener@29db9746, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@17cf5dcc, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@6bd5cb99, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@11c95035, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@64dd94ed, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@9918487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4cdd0f2f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@17cea679, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1f3c3291]
+29-03-2022 14:31:58.242 [main] INFO 
+				o.s.t.c.t.TransactionContext.startTransaction - Began transaction (1) for test context [DefaultTestContext@10c26161 testClass = RatingServiceTests, testInstance = com.nnk.springboot.RatingServiceTests@1ef6977b, testMethod = updateRatingTest@RatingServiceTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@674cd2da testClass = RatingServiceTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@686279e0, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@25d6ae3]; rollback [true]
+29-03-2022 14:31:58.251 [main] INFO 
+				o.s.t.c.t.TransactionContext.endTransaction - Rolled back transaction for test: [DefaultTestContext@10c26161 testClass = RatingServiceTests, testInstance = com.nnk.springboot.RatingServiceTests@1ef6977b, testMethod = updateRatingTest@RatingServiceTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@674cd2da testClass = RatingServiceTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@686279e0, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+29-03-2022 14:31:58.253 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.RuleTests], using SpringBootContextLoader
+29-03-2022 14:31:58.255 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.RuleTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:58.255 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.RuleTests]: RuleTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:58.256 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.RuleTests
+29-03-2022 14:31:58.258 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:58.259 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@61fb3dae, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@9c88323, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6d4bdb75, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1dc47df3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@256a25a8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@68f67bbd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5bd585a5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@65c040c9, org.springframework.test.context.event.EventPublishingTestExecutionListener@11736ebc, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@4a03c4bc, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@3d0c88f4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5aad4194, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@50a1c2f3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@453ca7f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5d41b929, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6dd0e2f4, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@333813e7]
+29-03-2022 14:31:58.320 [main] INFO 
+				o.s.t.c.t.TransactionContext.startTransaction - Began transaction (1) for test context [DefaultTestContext@3cc148d testClass = RuleTests, testInstance = com.nnk.springboot.RuleTests@172f88b1, testMethod = updateRuleNameTest@RuleTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51ea9f02 testClass = RuleTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@37b17938, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@25d6ae3]; rollback [true]
+29-03-2022 14:31:58.327 [main] INFO 
+				o.s.t.c.t.TransactionContext.endTransaction - Rolled back transaction for test: [DefaultTestContext@3cc148d testClass = RuleTests, testInstance = com.nnk.springboot.RuleTests@172f88b1, testMethod = updateRuleNameTest@RuleTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@51ea9f02 testClass = RuleTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@37b17938, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+29-03-2022 14:31:58.329 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.TradeTests], using SpringBootContextLoader
+29-03-2022 14:31:58.330 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.TradeTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:58.330 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.TradeTests]: TradeTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:58.331 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.TradeTests
+29-03-2022 14:31:58.332 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:58.333 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@58fcb07b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1724c649, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@3d5e1b83, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2fd79ac6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1215982f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@233202aa, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6e7d874c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7d6f31ef, org.springframework.test.context.event.EventPublishingTestExecutionListener@43051a8d, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@70916715, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@72d4d9ac, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@76b06e50, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1d0ac379, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@66d8a602, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@32950acc, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@47a22020, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@cf822a6]
+29-03-2022 14:31:58.409 [main] INFO 
+				o.s.t.c.t.TransactionContext.startTransaction - Began transaction (1) for test context [DefaultTestContext@72a1ccad testClass = TradeTests, testInstance = com.nnk.springboot.TradeTests@420849f6, testMethod = updateTradeTest@TradeTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@24f6f6bf testClass = TradeTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@255845b1, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@25d6ae3]; rollback [true]
+29-03-2022 14:31:58.416 [main] INFO 
+				o.s.t.c.t.TransactionContext.endTransaction - Rolled back transaction for test: [DefaultTestContext@72a1ccad testClass = TradeTests, testInstance = com.nnk.springboot.TradeTests@420849f6, testMethod = updateTradeTest@TradeTests, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@24f6f6bf testClass = TradeTests, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@255845b1, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+29-03-2022 14:31:58.419 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.nnk.springboot.UserServiceTest], using SpringBootContextLoader
+29-03-2022 14:31:58.420 [main] INFO 
+				o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.nnk.springboot.UserServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+29-03-2022 14:31:58.420 [main] INFO 
+				o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.nnk.springboot.UserServiceTest]: UserServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+29-03-2022 14:31:58.422 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.nnk.springboot.Application for test class com.nnk.springboot.UserServiceTest
+29-03-2022 14:31:58.424 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+29-03-2022 14:31:58.426 [main] INFO 
+				o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4ebf82d9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@685f43ca, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7952348f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4f3d49e4, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7d26b390, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6ff5eeed, org.springframework.test.context.transaction.TransactionalTestExecutionListener@76b49d0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@223c42b0, org.springframework.test.context.event.EventPublishingTestExecutionListener@6acedf54, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@2a0cc666, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@77f43f3e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@379ddab2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2b35976a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@67c64b9c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@311d8595, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@688c914e, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6f05d5f2]
+29-03-2022 14:31:58.474 [main] INFO 
+				o.s.t.c.t.TransactionContext.startTransaction - Began transaction (1) for test context [DefaultTestContext@298eca94 testClass = UserServiceTest, testInstance = com.nnk.springboot.UserServiceTest@6a51a39d, testMethod = updateUserTest@UserServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2acf3108 testClass = UserServiceTest, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@62765e11, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@25d6ae3]; rollback [true]
+29-03-2022 14:31:58.480 [main] INFO 
+				o.s.t.c.t.TransactionContext.endTransaction - Rolled back transaction for test: [DefaultTestContext@298eca94 testClass = UserServiceTest, testInstance = com.nnk.springboot.UserServiceTest@6a51a39d, testMethod = updateUserTest@UserServiceTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2acf3108 testClass = UserServiceTest, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@363042d7, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@56f0cc85, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7f36662c, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@4a194c39, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@41dd05a, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1a482e36], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -> true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -> true, 'org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener.mocks' -> org.mockito.internal.configuration.InjectingAnnotationEngine$$Lambda$1778/0x0000000800b67840@62765e11, 'org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]
+29-03-2022 14:31:58.526 [main] INFO 
+				c.nnk.springboot.PasswordEncodeTest.logStarting - Starting PasswordEncodeTest using Java 11 on DESKTOP-Q0H09QF with PID 14748 (started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:31:58.526 [main] INFO 
+				c.nnk.springboot.PasswordEncodeTest.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+29-03-2022 14:31:58.754 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:31:58.779 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 23 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:31:58.893 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Starting...
+29-03-2022 14:31:59.041 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-2 - Start completed.
+29-03-2022 14:31:59.079 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:31:59.090 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:31:59.162 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:31:59.162 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:31:59.218 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:31:59.460 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:31:59.465 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:31:59.542 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fc26fb1, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f14bdd1, org.springframework.security.web.header.HeaderWriterFilter@56297b5f, org.springframework.security.web.authentication.logout.LogoutFilter@2abb4810, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@12026d62, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4a3ef4c9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7085261e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@70e966a5, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@362e1181, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17f2e01d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a9c923f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3746135b, org.springframework.security.web.session.SessionManagementFilter@d9ef223, org.springframework.security.web.access.ExceptionTranslationFilter@22e94cf2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@16066bf4]
+29-03-2022 14:32:00.050 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:32:00.079 [main] INFO 
+				c.nnk.springboot.PasswordEncodeTest.logStarted - Started PasswordEncodeTest in 1.57 seconds (JVM running for 9.124)
+29-03-2022 14:32:00.173 [SpringApplicationShutdownHook] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:32:00.175 [SpringApplicationShutdownHook] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:32:00.177 [SpringApplicationShutdownHook] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+29-03-2022 14:32:00.182 [SpringApplicationShutdownHook] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:32:00.183 [SpringApplicationShutdownHook] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown initiated...
+29-03-2022 14:32:00.191 [SpringApplicationShutdownHook] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-2 - Shutdown completed.
+29-03-2022 14:33:41.759 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:33:41.766 [main] INFO 
+				com.nnk.springboot.Application.logStarting - Starting Application using Java 11 on DESKTOP-Q0H09QF with PID 14948 (C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:33:41.767 [main] INFO 
+				com.nnk.springboot.Application.logStartupProfileInfo - The following profiles are active: dev
+29-03-2022 14:33:42.496 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:33:42.559 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 56 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:33:43.057 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-03-2022 14:33:43.065 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:33:43.066 [main] INFO 
+				o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-03-2022 14:33:43.066 [main] INFO 
+				o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.55]
+29-03-2022 14:33:43.157 [main] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-03-2022 14:33:43.157 [main] INFO 
+				o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1360 ms
+29-03-2022 14:33:43.399 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:33:43.516 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:33:43.588 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:33:43.632 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:33:43.761 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:33:43.861 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:33:44.408 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:33:44.416 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:33:44.479 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:33:45.007 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:33:45.049 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:33:45.156 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a0b550a, org.springframework.security.web.context.SecurityContextPersistenceFilter@380e470a, org.springframework.security.web.header.HeaderWriterFilter@4b20a8e4, org.springframework.security.web.authentication.logout.LogoutFilter@5ab29866, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7a085d02, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7cb4d4ee, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d5b549b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@51d41b97, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3390621a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5da41d02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31dbca5d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69d9d322, org.springframework.security.web.session.SessionManagementFilter@7c7a4986, org.springframework.security.web.access.ExceptionTranslationFilter@4b8ac512, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ed0128b]
+29-03-2022 14:33:45.967 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:33:46.019 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:33:46.033 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+29-03-2022 14:33:46.043 [main] INFO 
+				com.nnk.springboot.Application.logStarted - Started Application in 4.528 seconds (JVM running for 5.238)
+29-03-2022 14:34:30.453 [http-nio-8080-exec-1] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-03-2022 14:34:30.453 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+29-03-2022 14:34:30.454 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+29-03-2022 14:34:40.788 [http-nio-8080-exec-3] WARN 
+				o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [111] milliseconds.
+29-03-2022 14:35:00.331 [http-nio-8080-exec-8] ERROR
+				org.thymeleaf.TemplateEngine.process - [THYMELEAF][http-nio-8080-exec-8] Exception processing template "bidList/update": Exception evaluating SpringEL expression: "bidList.bidListId" (template: "bidList/update" - line 16, col 20)
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "bidList.bidListId" (template: "bidList/update" - line 16, col 20)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.resolveParameters(LinkExpression.java:339)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:285)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:592)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1400)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1145)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:237)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:223)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:178)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'bidListId' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 117 common frames omitted
+29-03-2022 14:35:00.334 [http-nio-8080-exec-8] ERROR
+				o.a.c.c.C.[.[.[.[dispatcherServlet].log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "bidList.bidListId" (template: "bidList/update" - line 16, col 20)] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'bidListId' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.resolveParameters(LinkExpression.java:339)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:285)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:592)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1400)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1145)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:237)
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:223)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:178)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+29-03-2022 14:37:06.683 [RMI TCP Connection(9)-127.0.0.1] INFO 
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+29-03-2022 14:37:06.822 [RMI TCP Connection(9)-127.0.0.1] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:37:06.824 [RMI TCP Connection(9)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:37:06.832 [RMI TCP Connection(9)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+29-03-2022 14:37:09.602 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:37:09.609 [main] INFO 
+				com.nnk.springboot.Application.logStarting - Starting Application using Java 11 on DESKTOP-Q0H09QF with PID 14828 (C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:37:09.611 [main] INFO 
+				com.nnk.springboot.Application.logStartupProfileInfo - The following profiles are active: dev
+29-03-2022 14:37:10.340 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:37:10.400 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 53 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:37:10.893 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-03-2022 14:37:10.901 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:37:10.901 [main] INFO 
+				o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-03-2022 14:37:10.902 [main] INFO 
+				o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.55]
+29-03-2022 14:37:10.989 [main] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-03-2022 14:37:10.989 [main] INFO 
+				o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1347 ms
+29-03-2022 14:37:11.255 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:37:11.370 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:37:11.444 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:37:11.487 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:37:11.617 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:37:11.713 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:37:12.263 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:37:12.271 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:37:12.341 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:37:12.892 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:37:12.936 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:37:13.044 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@280e4390, org.springframework.security.web.context.SecurityContextPersistenceFilter@fe38d1e, org.springframework.security.web.header.HeaderWriterFilter@3c98eaa9, org.springframework.security.web.authentication.logout.LogoutFilter@77262e71, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@436103b1, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@28468162, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@34dda1b4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@32d3b965, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@21262bde, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b8ac512, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b3dc752, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3df7e309, org.springframework.security.web.session.SessionManagementFilter@1299fed3, org.springframework.security.web.access.ExceptionTranslationFilter@57cc0333, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23243bc0]
+29-03-2022 14:37:13.879 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:37:13.917 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:37:13.930 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+29-03-2022 14:37:13.941 [main] INFO 
+				com.nnk.springboot.Application.logStarted - Started Application in 4.608 seconds (JVM running for 5.42)
+29-03-2022 14:37:22.949 [http-nio-8080-exec-1] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-03-2022 14:37:22.949 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+29-03-2022 14:37:22.950 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+29-03-2022 14:37:23.111 [http-nio-8080-exec-1] WARN 
+				o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [132] milliseconds.
+29-03-2022 14:38:43.497 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+29-03-2022 14:38:43.631 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:38:43.633 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:38:43.641 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+29-03-2022 14:38:46.296 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:38:46.304 [main] INFO 
+				com.nnk.springboot.Application.logStarting - Starting Application using Java 11 on DESKTOP-Q0H09QF with PID 14556 (C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:38:46.305 [main] INFO 
+				com.nnk.springboot.Application.logStartupProfileInfo - The following profiles are active: dev
+29-03-2022 14:38:47.035 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:38:47.098 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 55 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:38:47.593 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-03-2022 14:38:47.601 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:38:47.601 [main] INFO 
+				o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-03-2022 14:38:47.601 [main] INFO 
+				o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.55]
+29-03-2022 14:38:47.693 [main] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-03-2022 14:38:47.694 [main] INFO 
+				o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1359 ms
+29-03-2022 14:38:47.947 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:38:48.063 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:38:48.137 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:38:48.179 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:38:48.307 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:38:48.402 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:38:48.940 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:38:48.948 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:38:49.011 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:38:49.541 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:38:49.585 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:38:49.692 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a0b550a, org.springframework.security.web.context.SecurityContextPersistenceFilter@380e470a, org.springframework.security.web.header.HeaderWriterFilter@4b20a8e4, org.springframework.security.web.authentication.logout.LogoutFilter@5ab29866, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7a085d02, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7cb4d4ee, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d5b549b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@51d41b97, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3390621a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5da41d02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31dbca5d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69d9d322, org.springframework.security.web.session.SessionManagementFilter@7c7a4986, org.springframework.security.web.access.ExceptionTranslationFilter@4b8ac512, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ed0128b]
+29-03-2022 14:38:50.520 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:38:50.556 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:38:50.570 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+29-03-2022 14:38:50.581 [main] INFO 
+				com.nnk.springboot.Application.logStarted - Started Application in 4.54 seconds (JVM running for 5.268)
+29-03-2022 14:38:59.605 [http-nio-8080-exec-1] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-03-2022 14:38:59.605 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+29-03-2022 14:38:59.607 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+29-03-2022 14:38:59.764 [http-nio-8080-exec-1] WARN 
+				o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [130] milliseconds.
+29-03-2022 14:40:43.070 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+29-03-2022 14:40:43.190 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:40:43.192 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:40:43.201 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+29-03-2022 14:40:45.852 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:40:45.860 [main] INFO 
+				com.nnk.springboot.Application.logStarting - Starting Application using Java 11 on DESKTOP-Q0H09QF with PID 2280 (C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:40:45.862 [main] INFO 
+				com.nnk.springboot.Application.logStartupProfileInfo - The following profiles are active: dev
+29-03-2022 14:40:46.628 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:40:46.693 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 57 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:40:47.188 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-03-2022 14:40:47.196 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:40:47.197 [main] INFO 
+				o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-03-2022 14:40:47.197 [main] INFO 
+				o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.55]
+29-03-2022 14:40:47.290 [main] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-03-2022 14:40:47.290 [main] INFO 
+				o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1395 ms
+29-03-2022 14:40:47.537 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:40:47.651 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:40:47.725 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:40:47.769 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:40:47.894 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:40:47.989 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:40:48.527 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:40:48.535 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:40:48.599 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:40:49.133 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:40:49.180 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:40:49.305 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b2e841, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b3dc752, org.springframework.security.web.header.HeaderWriterFilter@1a4564a2, org.springframework.security.web.authentication.logout.LogoutFilter@7860a014, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@55f4ec04, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1db9d253, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4c231f62, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4e77f29e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3a75d9a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29280ca6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@380e470a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@698daff6, org.springframework.security.web.session.SessionManagementFilter@58922a00, org.springframework.security.web.access.ExceptionTranslationFilter@1930e8ef, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c5c2a84]
+29-03-2022 14:40:50.234 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:40:50.270 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:40:50.284 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+29-03-2022 14:40:50.295 [main] INFO 
+				com.nnk.springboot.Application.logStarted - Started Application in 4.694 seconds (JVM running for 5.436)
+29-03-2022 14:40:53.847 [http-nio-8080-exec-1] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-03-2022 14:40:53.847 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+29-03-2022 14:40:53.848 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+29-03-2022 14:40:54.005 [http-nio-8080-exec-1] WARN 
+				o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [129] milliseconds.
+29-03-2022 14:43:01.817 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+29-03-2022 14:43:01.953 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:43:01.955 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:43:01.964 [RMI TCP Connection(7)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+29-03-2022 14:43:04.628 [background-preinit] INFO 
+				o.h.validator.internal.util.Version.<clinit> - HV000001: Hibernate Validator 6.2.0.Final
+29-03-2022 14:43:04.635 [main] INFO 
+				com.nnk.springboot.Application.logStarting - Starting Application using Java 11 on DESKTOP-Q0H09QF with PID 2772 (C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes started by Megaport in C:\dev\P7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+29-03-2022 14:43:04.636 [main] INFO 
+				com.nnk.springboot.Application.logStartupProfileInfo - The following profiles are active: dev
+29-03-2022 14:43:05.378 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+29-03-2022 14:43:05.440 [main] INFO 
+				o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 56 ms. Found 6 JPA repository interfaces.
+29-03-2022 14:43:05.950 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+29-03-2022 14:43:05.959 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:43:05.959 [main] INFO 
+				o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+29-03-2022 14:43:05.959 [main] INFO 
+				o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.55]
+29-03-2022 14:43:06.060 [main] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+29-03-2022 14:43:06.060 [main] INFO 
+				o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1393 ms
+29-03-2022 14:43:06.330 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+29-03-2022 14:43:06.455 [main] INFO 
+				com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+29-03-2022 14:43:06.536 [main] INFO 
+				o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+29-03-2022 14:43:06.584 [main] INFO 
+				org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 5.6.1.Final
+29-03-2022 14:43:06.721 [main] INFO 
+				o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+29-03-2022 14:43:06.827 [main] INFO 
+				org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+29-03-2022 14:43:07.448 [main] INFO 
+				o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+29-03-2022 14:43:07.456 [main] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:43:07.531 [main] WARN 
+				o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+29-03-2022 14:43:08.149 [main] INFO 
+				c.n.s.config.WebSecurityConfig.configure - in configure AUthenticationManagerBuilder
+29-03-2022 14:43:08.199 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure Ant [pattern='/css/**'] with []
+29-03-2022 14:43:08.326 [main] INFO 
+				o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a0b550a, org.springframework.security.web.context.SecurityContextPersistenceFilter@380e470a, org.springframework.security.web.header.HeaderWriterFilter@4b20a8e4, org.springframework.security.web.authentication.logout.LogoutFilter@5ab29866, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7a085d02, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7cb4d4ee, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2d5b549b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@51d41b97, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3390621a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5da41d02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@31dbca5d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69d9d322, org.springframework.security.web.session.SessionManagementFilter@7c7a4986, org.springframework.security.web.access.ExceptionTranslationFilter@4b8ac512, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ed0128b]
+29-03-2022 14:43:09.261 [main] INFO 
+				o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+29-03-2022 14:43:09.301 [main] INFO 
+				o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8080"]
+29-03-2022 14:43:09.317 [main] INFO 
+				o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+29-03-2022 14:43:09.328 [main] INFO 
+				com.nnk.springboot.Application.logStarted - Started Application in 4.949 seconds (JVM running for 5.689)
+29-03-2022 14:43:09.567 [http-nio-8080-exec-1] INFO 
+				o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+29-03-2022 14:43:09.567 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+29-03-2022 14:43:09.568 [http-nio-8080-exec-1] INFO 
+				o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+29-03-2022 14:43:09.731 [http-nio-8080-exec-1] WARN 
+				o.a.c.util.SessionIdGeneratorBase.log - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [133] milliseconds.
+29-03-2022 14:45:28.206 [RMI TCP Connection(8)-127.0.0.1] INFO 
+				o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+29-03-2022 14:45:28.341 [RMI TCP Connection(8)-127.0.0.1] INFO 
+				o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+29-03-2022 14:45:28.344 [RMI TCP Connection(8)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+29-03-2022 14:45:28.352 [RMI TCP Connection(8)-127.0.0.1] INFO 
+				com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
