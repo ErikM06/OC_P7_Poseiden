@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Controller
 @RequestMapping
@@ -64,7 +64,7 @@ public class BidListController {
 		// TODO: get Bid by Id and to model then show to the form
 		try {
 		model.addAttribute("bidList", iBidList.getById(id));
-		} catch (CustomBidNotFoundException e) {
+		} catch (CustomIdNotFoundException e) {
 			model.addAttribute("error", e.getMessage());
 		}
 		model.addAttribute("bidListDto", new BidListDTO());

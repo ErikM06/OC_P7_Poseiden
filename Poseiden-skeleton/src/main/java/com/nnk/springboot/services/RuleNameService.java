@@ -12,7 +12,7 @@ import com.nnk.springboot.interfaces.IRuleNameService;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import com.nnk.springboot.util.RuleNameMapper;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Service
 public class RuleNameService implements IRuleNameService{
@@ -51,7 +51,7 @@ public class RuleNameService implements IRuleNameService{
 	public RuleName getRuleNameById(Integer id) {
 		Optional<RuleName> optional = ruleNameRepository.findById(id);
 		if (optional.isEmpty()) {
-			throw new CustomBidNotFoundException("RuleName with id :"+id+" not found!");
+			throw new CustomIdNotFoundException("RuleName with id :"+id+" not found!");
 		}
 		return optional.get();
 	}

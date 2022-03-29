@@ -4,7 +4,7 @@ import com.nnk.springboot.DTOs.TradeDTO;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.interfaces.ITradeService;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 import javax.validation.Valid;
 
@@ -58,7 +58,7 @@ public class TradeController {
 		model.addAttribute("tradeDto", new TradeDTO());
 		try {
 		model.addAttribute("trade", tradeService.getTradeById(id));
-		} catch (CustomBidNotFoundException e) {
+		} catch (CustomIdNotFoundException e) {
 			model.addAttribute("error", e.getMessage());
 		}
 		return "trade/update";
