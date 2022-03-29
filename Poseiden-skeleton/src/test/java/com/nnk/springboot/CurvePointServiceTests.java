@@ -65,7 +65,7 @@ public class CurvePointServiceTests {
 	public void saveCurvePointTest() {
 		CurvePoint curvePointToSave = curvePointService.saveCurvePoint(curvePointDto);
 		assertNotNull(curvePointToSave);
-		assertEquals(curvePointToSave.getValue(), curvePoint.getValue());
+		assertEquals(curvePointToSave.getValue(), curvePointDto.getValue());
 	}
 
 	@Test

@@ -58,7 +58,7 @@ public class RuleTests {
 	public void saveRuleNameTest() {
 		RuleName ruleToSave = ruleNameService.saveRuleName(ruleNameDTO);
 		assertNotNull(ruleToSave);
-		assertEquals(ruleToSave.getName(), rule.getName());
+		assertEquals(ruleToSave.getName(), ruleNameDTO.getName());
 	}
 
 	@Test
