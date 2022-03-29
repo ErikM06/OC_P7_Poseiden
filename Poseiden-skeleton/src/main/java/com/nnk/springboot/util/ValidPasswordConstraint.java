@@ -14,7 +14,7 @@ import javax.validation.Payload;
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidPasswordConstraint {
-	
+	String message() default "Invalid Password";
 	Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 
