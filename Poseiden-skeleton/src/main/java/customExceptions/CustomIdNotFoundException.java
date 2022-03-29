@@ -1,13 +1,13 @@
 package customExceptions;
 
-public class CustomBidNotFoundException extends RuntimeException{
+public class CustomIdNotFoundException extends RuntimeException{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CustomBidNotFoundException (String msg) {
+	public CustomIdNotFoundException (String msg) {
 		super(msg);	
 	}
 

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nnk.springboot.DTOs.RatingDTO;
 import com.nnk.springboot.interfaces.IRatingService;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Controller
 public class RatingController {
@@ -57,7 +57,7 @@ public class RatingController {
         // TODO: get Rating by Id and to model then show to the form
     	try {
     	model.addAttribute("rating", iRatingService.getById(id));
-    	} catch (CustomBidNotFoundException e) {
+    	} catch (CustomIdNotFoundException e) {
     		model.addAttribute("error", e.getMessage());
     	}
     	model.addAttribute("ratingDto", new RatingDTO());

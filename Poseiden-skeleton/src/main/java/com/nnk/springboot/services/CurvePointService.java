@@ -12,7 +12,7 @@ import com.nnk.springboot.interfaces.ICurvePointService;
 import com.nnk.springboot.repositories.CurvePointRepository;
 import com.nnk.springboot.util.CurvePointMapper;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Service
 public class CurvePointService implements ICurvePointService {
@@ -48,7 +48,7 @@ public class CurvePointService implements ICurvePointService {
 	public CurvePoint getCurvePointById (Integer id) {
 		Optional<CurvePoint>optional = curvePointRepo.findById(id);
 		if (optional.isEmpty()) {
-			throw new CustomBidNotFoundException("curvePoint with id :"+id+" not found!");
+			throw new CustomIdNotFoundException("curvePoint with id :"+id+" not found!");
 		}
 		return optional.get();
 		

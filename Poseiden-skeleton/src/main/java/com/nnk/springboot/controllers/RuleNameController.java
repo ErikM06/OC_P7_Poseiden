@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nnk.springboot.DTOs.RuleNameDTO;
 import com.nnk.springboot.interfaces.IRuleNameService;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Controller
 public class RuleNameController {
@@ -54,7 +54,7 @@ public class RuleNameController {
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		try {
 		model.addAttribute("ruleName", ruleNameService.getRuleNameById(id));
-		} catch (CustomBidNotFoundException e) {
+		} catch (CustomIdNotFoundException e) {
 			model.addAttribute("error", e.getMessage());
 		}
 		model.addAttribute("ruleNameDto", new RuleNameDTO());

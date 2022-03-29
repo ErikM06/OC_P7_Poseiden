@@ -12,7 +12,7 @@ import com.nnk.springboot.interfaces.IBidListService;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.util.BidListMapper;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Service
 public class BidListService implements IBidListService {
@@ -40,7 +40,7 @@ public class BidListService implements IBidListService {
 	public BidList uptadeBid(Integer id, BidListDTO bidDto) {
 		Optional<BidList>optional = bidListRepo.findById(id);
 		if (optional.isEmpty()) {
-			throw new CustomBidNotFoundException("BidList with id :"+id+" not found !");
+			throw new CustomIdNotFoundException("BidList with id :"+id+" not found !");
 		}
 		BidList bidToUpdate = optional.get();
 		bMapper.updateBidListByBidListDTO(bidDto, bidToUpdate);
@@ -56,7 +56,7 @@ public class BidListService implements IBidListService {
 	public BidList getById(Integer id) {
 		Optional<BidList>optional = bidListRepo.findById(id);
 		if (optional.isEmpty()) {
-			throw new CustomBidNotFoundException("BidList with id :"+id+" not found !");
+			throw new CustomIdNotFoundException("BidList with id :"+id+" not found !");
 		}
 		// TODO Auto-generated method stub
 		return optional.get();

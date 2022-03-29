@@ -18,7 +18,7 @@ import com.nnk.springboot.DTOs.CurvePointDTO;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.interfaces.ICurvePointService;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 
 @Controller
@@ -59,7 +59,7 @@ public class CurveController {
         // TODO: get CurvePoint by Id and to model then show to the form
     	try {
     	model.addAttribute("curvePoint", iCurvePoint.getCurvePointById(id)); }
-    	catch (CustomBidNotFoundException e) {
+    	catch (CustomIdNotFoundException e) {
     		model.addAttribute("error", e.getMessage());
     	}
     	model.addAttribute("curvePointDto", new CurvePointDTO()); 

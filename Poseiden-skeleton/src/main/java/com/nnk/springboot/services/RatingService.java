@@ -12,7 +12,7 @@ import com.nnk.springboot.interfaces.IRatingService;
 import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.util.RatingMapper;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Service
 public class RatingService implements IRatingService{
@@ -52,7 +52,7 @@ public class RatingService implements IRatingService{
 	public Rating getById(Integer id) {
 		Optional<Rating>optional = ratingRepo.findById(id);
 		if (optional.isEmpty()) {
-			throw new CustomBidNotFoundException("Rating with id:"+id+" not found!");
+			throw new CustomIdNotFoundException("Rating with id:"+id+" not found!");
 		}
 		return optional.get();
 	}

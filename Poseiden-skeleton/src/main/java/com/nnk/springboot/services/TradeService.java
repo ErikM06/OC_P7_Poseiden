@@ -12,7 +12,7 @@ import com.nnk.springboot.interfaces.ITradeService;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.util.TradeMapper;
 
-import customExceptions.CustomBidNotFoundException;
+import customExceptions.CustomIdNotFoundException;
 
 @Service
 public class TradeService implements ITradeService{
@@ -54,7 +54,7 @@ public class TradeService implements ITradeService{
 	public Trade getTradeById(Integer id) {
 		Optional<Trade>optional = tradeRepo.findById(id);
 		if (optional.isEmpty()) {
-			throw new CustomBidNotFoundException("trade with id :"+id+" not found!");
+			throw new CustomIdNotFoundException("trade with id :"+id+" not found!");
 		}
 		return optional.get();
 	}
