@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
 import com.nnk.springboot.DTOs.BidListDTO;
 import com.nnk.springboot.interfaces.IBidListService;
+
+import customExceptions.CustomBidNotFoundException;
 
 @Controller
 @RequestMapping
@@ -30,13 +30,13 @@ public class BidListController {
 
 	@Autowired
 	IBidListService iBidList;
-	
 
 	@RequestMapping("/bidList/list")
-	public String home(Model model,  @AuthenticationPrincipal OAuth2User principal) throws UserPrincipalNotFoundException {
+	public String home(Model model, @AuthenticationPrincipal OAuth2User principal)
+			throws UserPrincipalNotFoundException {
 		// TODO: call service find all bids to show to the view
-		if (principal!=null) {
-		model.addAttribute("currentUser",principal.getAttributes().get("email"));
+		if (principal != null) {
+			model.addAttribute("currentUser", principal.getAttributes().get("email"));
 		}
 		model.addAttribute("bidList", iBidList.getAllBidList());
 
@@ -50,24 +50,23 @@ public class BidListController {
 	}
 
 	@PostMapping("/bidList/validate")
-	public ModelAndView validate(@ModelAttribute("bidlist") @Valid BidListDTO bidDto, BindingResult result, Model model) {
+	public String validate(@ModelAttribute("bidList") @Valid BidListDTO bidDto, BindingResult result, Model model) {
 		// TODO: check data valid and save to db, after saving return bid list
-
 		if (result.hasErrors()) {
-			ModelAndView mav = new ModelAndView();
-			mav.addObject("error",result);
-			mav.setViewName("bidList/add?error=true");
-			return mav;
+			return "bidList/add";
 		}
 		iBidList.saveBid(bidDto);
-
-		return new ModelAndView("redirect:/bidList/list");
+		return "redirect:/bidList/list";
 	}
 
 	@GetMapping("/bidList/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		// TODO: get Bid by Id and to model then show to the form
+		try {
 		model.addAttribute("bidList", iBidList.getById(id));
+		} catch (CustomBidNotFoundException e) {
+			model.addAttribute("error", e.getMessage());
+		}
 		model.addAttribute("bidListDto", new BidListDTO());
 		return "bidList/update";
 	}

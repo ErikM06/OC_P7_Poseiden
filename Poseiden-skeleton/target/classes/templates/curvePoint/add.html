@@ -18,6 +18,7 @@ xmlns:th="http://www.thymeleaf.org">
 				<input th:field="*{curveId}" id="curveId" name="curveId" placeholder="curveId">
 				<p th:if="${#fields.hasErrors('curveId')}" th:errorclass="error" th:errors="*{curveId}" />
 				<input th:field="*{term}" id="term" name="term" placeholder="term">
+				<p th:if="${#fields.hasErrors('term')}" th:errorclass="error" th:errors="*{term}" />
 				<input th:field="*{value}" th:errorclass="fieldError"   id="value" name="value" placeholder="value">
 				<p th:if="${#fields.hasErrors('value')}" th:errorclass="error" th:errors="*{value}" />
 

@@ -44,7 +44,7 @@ public class TradeTests {
 	private void setUp() {
 		trade = new Trade("Account test","Type test");
 		tradeRepository.save(trade);
-		tradeDTO = new TradeDTO("TradeDto account test","TradeDto Type test");
+		tradeDTO = new TradeDTO("TradeDto account test","TradeDto Type test", 20.0);
 	}
 	
 	@AfterEach
@@ -55,7 +55,7 @@ public class TradeTests {
 	}
 	@Test
 	public void saveTradeTest() {
-		Trade tradeToSave = tradeService.saveTrade(trade);
+		Trade tradeToSave = tradeService.saveTrade(tradeDTO);
 		assertNotNull(tradeToSave);
 		assertEquals(tradeToSave.getAccount(), trade.getAccount());
 	}

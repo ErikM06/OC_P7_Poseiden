@@ -62,14 +62,14 @@ public class CurvePointServiceTests {
 	}
 
 	@Test
-	public void saveBidTest() {
-		CurvePoint curvePointToSave = curvePointService.saveBid(curvePoint);
+	public void saveCurvePointTest() {
+		CurvePoint curvePointToSave = curvePointService.saveCurvePoint(curvePointDto);
 		assertNotNull(curvePointToSave);
 		assertEquals(curvePointToSave.getValue(), curvePoint.getValue());
 	}
 
 	@Test
-	public void findAllBidTest() {
+	public void findAllCurvePointTest() {
 		List<CurvePoint> curveList = curvePointService.getAllCurvePoint();
 		assertNotNull(curveList);
 		assertThat(curveList.contains(curvePoint));
@@ -84,8 +84,8 @@ public class CurvePointServiceTests {
 	}
 
 	@Test
-	public void deleteBidTest() throws Exception {
-		curvePointService.deleteBid(curvePoint.getId());
+	public void deleteCurvePointTest() throws Exception {
+		curvePointService.deleteCurvePoint(curvePoint.getId());
 		assertFalse(curvePointRepository.existsById(curvePoint.getId()));
 
 	}

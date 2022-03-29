@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nnk.springboot.DTOs.RatingDTO;
-import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.interfaces.IRatingService;
+
+import customExceptions.CustomBidNotFoundException;
 
 @Controller
 public class RatingController {
@@ -37,23 +38,28 @@ public class RatingController {
 
     @GetMapping("/rating/add")
     public String addRatingForm(Model model) {
-    	model.addAttribute("rating", new Rating());
+    	model.addAttribute("rating", new RatingDTO());
         return "rating/add";
     }
 
     @PostMapping("/rating/validate")
-    public String validate(@ModelAttribute("rating") @Valid Rating rating, BindingResult result, Model model) {
+    public String validate(@ModelAttribute("rating") @Valid RatingDTO ratingDto, BindingResult result, Model model) {
         // TODO: check data valid and save to db, after saving return Rating list
     	if (result.hasErrors()) {
-    		return "redirect:/rating/add?error=true";
+    		return "rating/add";
     		}
-    	iRatingService.saveRating(rating);
+    	iRatingService.saveRating(ratingDto);
         return "redirect:/rating/list";
     }
 
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get Rating by Id and to model then show to the form
+    	try {
+    	model.addAttribute("rating", iRatingService.getById(id));
+    	} catch (CustomBidNotFoundException e) {
+    		model.addAttribute("error", e.getMessage());
+    	}
     	model.addAttribute("ratingDto", new RatingDTO());
         return "rating/update";
     }

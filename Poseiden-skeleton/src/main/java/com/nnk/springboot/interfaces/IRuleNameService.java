@@ -11,10 +11,10 @@ public List<RuleName> getAllRuleName();
 	
 	public RuleName uptadeRuleName(Integer id, RuleNameDTO ruleNameDto);
 	
-	public RuleName saveRuleName(RuleName ruleName);
+	public RuleName saveRuleName(RuleNameDTO ruleNameDto);
 	
 	public void deleteRuleName(Integer id);
 	
-	public RuleName getById (Integer id);
+	public RuleName getRuleNameById (Integer id);
 
 }

@@ -19,6 +19,7 @@
 				<input th:field="*{type}" id="type" name="type" placeholder="type">
 				<p th:if="${#fields.hasErrors('type')}" th:errorclass="error" th:errors="*{type}" />
 				<input th:field="*{bidQuantity}" th:errorclass="fieldError"   id="bidQuantity" name="bidQuantity" placeholder="bidQuantity">
+				<p th:if="${#fields.hasErrors('bidQuantity')}" th:errorclass="error" th:errors="*{bidQuantity}" />
 
 
 				<td>

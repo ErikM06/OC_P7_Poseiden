@@ -5,12 +5,9 @@ import javax.persistence.*;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.SelectBeforeUpdate;
 
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-
 import java.sql.Timestamp;
 
 @Entity
@@ -18,8 +15,6 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
-@EqualsAndHashCode
 @DynamicUpdate
 @SelectBeforeUpdate
 public class Trade {

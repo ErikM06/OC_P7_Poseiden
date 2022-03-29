@@ -8,7 +8,7 @@ import com.nnk.springboot.domain.Rating;
 public interface IRatingService {
 	public List<Rating> getAllRating();
 
-	public Rating saveRating(Rating rating);
+	public Rating saveRating(RatingDTO ratingDto);
 
 	public Rating updateRating(Integer id, RatingDTO ratingDto);
 

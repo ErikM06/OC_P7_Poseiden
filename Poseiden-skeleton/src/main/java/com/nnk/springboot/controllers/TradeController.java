@@ -4,6 +4,8 @@ import com.nnk.springboot.DTOs.TradeDTO;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.interfaces.ITradeService;
 
+import customExceptions.CustomBidNotFoundException;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,26 +37,30 @@ public class TradeController {
 	}
 
 	@GetMapping("/trade/add")
-	public String addUser(Trade trade, Model model) {
-		model.addAttribute("trade", new Trade());
+	public String addTrade(TradeDTO tradeDto, Model model) {
+		model.addAttribute("tradeDto", new TradeDTO());
 		return "trade/add";
 	}
 
 	@PostMapping("/trade/validate")
-	public String validate(@ModelAttribute("trade") @Valid Trade trade, BindingResult result, Model model) {
+	public String validate(@ModelAttribute("trade") @Valid TradeDTO tradeDto, BindingResult result, Model model) {
 		// TODO: check data valid and save to db, after saving return Trade list
 		if (result.hasErrors()) {
-			return "redirect:/trade/add?error=true";
+			return "trade/add";
 		}
-		tradeService.saveTrade(trade);
-		return "redirect:/rate/list";
+		tradeService.saveTrade(tradeDto);
+		return "redirect:/trade/list";
 	}
 
 	@GetMapping("/trade/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 		// TODO: get Trade by Id and to model then show to the form
 		model.addAttribute("tradeDto", new TradeDTO());
-		model.addAttribute("rating", tradeService.getById(id));
+		try {
+		model.addAttribute("trade", tradeService.getTradeById(id));
+		} catch (CustomBidNotFoundException e) {
+			model.addAttribute("error", e.getMessage());
+		}
 		return "trade/update";
 	}
 
@@ -64,16 +70,15 @@ public class TradeController {
 		// TODO: check required fields, if valid call service to update Trade and return
 		// Trade list
 		if (result.hasErrors()) {
-			return "trade/update?error=true";
+			return "trade/update";
 		}
 		tradeService.updateTrade(id, tradeDto);
 		return "redirect:/trade/list";
 	}
 
 	@GetMapping("/trade/delete/{id}")
-	public String deleteTrade(@PathVariable("id") Integer id, Model model) {
+	public String deleteTrade(@PathVariable("id") Integer id) {
 		// TODO: Find Trade by Id and delete the Trade, return to Trade list
-		model.addAttribute("id", id);
 		tradeService.deleteTrade(id);
 		return "redirect:/trade/list";
 	}

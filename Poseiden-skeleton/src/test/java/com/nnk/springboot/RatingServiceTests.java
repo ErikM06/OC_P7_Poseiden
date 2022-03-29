@@ -60,7 +60,7 @@ public class RatingServiceTests {
 
 	@Test
 	public void saveRatingTest() {
-		Rating ratingToSave = ratingService.saveRating(rating);
+		Rating ratingToSave = ratingService.saveRating(ratingDTO);
 		assertNotNull(ratingToSave);
 		assertEquals(ratingToSave.getId(), rating.getId());
 	
@@ -79,7 +79,7 @@ public class RatingServiceTests {
 	public void updateRatingTest() {
 		ratingService.updateRating(rating.getId(), ratingDTO);
 		Rating retrivedModifiedRating = ratingRepository.getById(rating.getId());
-		assertThat(ratingDTO.getMoodysRatingDto().equals(retrivedModifiedRating.getMoodysRating()));
+		assertThat(ratingDTO.getMoodysRating().equals(retrivedModifiedRating.getMoodysRating()));
 	}
 
 	@Test

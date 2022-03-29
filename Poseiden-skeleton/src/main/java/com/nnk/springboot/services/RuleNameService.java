@@ -1,6 +1,7 @@
 package com.nnk.springboot.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.interfaces.IRuleNameService;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import com.nnk.springboot.util.RuleNameMapper;
+
+import customExceptions.CustomBidNotFoundException;
 
 @Service
 public class RuleNameService implements IRuleNameService{
@@ -22,7 +25,6 @@ public class RuleNameService implements IRuleNameService{
 
 	@Override
 	public List<RuleName> getAllRuleName() {
-		// TODO Auto-generated method stub
 		return ruleNameRepository.findAll();
 	}
 
@@ -30,26 +32,28 @@ public class RuleNameService implements IRuleNameService{
 	public RuleName uptadeRuleName(Integer id, RuleNameDTO ruleNameDto) {
 		RuleName ruleNameToUpdate = ruleNameRepository.getById(id);
 		rMapper.updateRuleNameByDTO(ruleNameDto, ruleNameToUpdate);
-		// TODO Auto-generated method stub
 		return ruleNameRepository.save(ruleNameToUpdate);
 	}
 
 	@Override
-	public RuleName saveRuleName(RuleName ruleName) {
-		// TODO Auto-generated method stub
-		return ruleNameRepository.save(ruleName);
+	public RuleName saveRuleName(RuleNameDTO ruleNameDto) {
+		RuleName ruleNameToSave = new RuleName();
+		rMapper.updateRuleNameByDTO(ruleNameDto, ruleNameToSave);
+		return ruleNameRepository.save(ruleNameToSave);
 	}
 
 	@Override
 	public void deleteRuleName(Integer id) {
-		// TODO Auto-generated method stub
 		ruleNameRepository.deleteById(id);
 	}
 
 	@Override
-	public RuleName getById(Integer id) {
-		// TODO Auto-generated method stub
-		return ruleNameRepository.getById(id);
+	public RuleName getRuleNameById(Integer id) {
+		Optional<RuleName> optional = ruleNameRepository.findById(id);
+		if (optional.isEmpty()) {
+			throw new CustomBidNotFoundException("RuleName with id :"+id+" not found!");
+		}
+		return optional.get();
 	}
 
 }

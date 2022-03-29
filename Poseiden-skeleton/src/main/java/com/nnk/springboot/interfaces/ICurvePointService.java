@@ -9,10 +9,12 @@ public interface ICurvePointService {
 	
 	public List<CurvePoint> getAllCurvePoint();
 	
-	public CurvePoint saveBid (CurvePoint curvePoint);
+	public CurvePoint saveCurvePoint (CurvePointDTO curvePointDto);
 	
 	public CurvePoint updateCurvePoint(Integer id, CurvePointDTO curvePointDTO);
 	
-	public void deleteBid (Integer id);
+	public void deleteCurvePoint (Integer id);
+
+	public CurvePoint getCurvePointById(Integer id);
 
 }

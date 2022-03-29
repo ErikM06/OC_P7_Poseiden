@@ -26,7 +26,7 @@ public class BidList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
-	Integer BidListId;
+	Integer bidListId;
 	
 	String account;
 	
@@ -75,7 +75,7 @@ public class BidList {
 			String trader, String book, String creationName, Timestamp creationDate, String revisionName,
 			Timestamp revisionDate, String dealName, String dealType, String sourceListId, String side) {
 
-		this.BidListId = bidListId;
+		this.bidListId = bidListId;
 		this.account = account;
 		this.type = type;
 		this.bidQuantity = bidQuantity;

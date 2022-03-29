@@ -2,34 +2,38 @@ package com.nnk.springboot.DTOs;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @NoArgsConstructor
-@Data
-@ToString
-@EqualsAndHashCode
+@Getter
+@Setter
 @Component
 public class RatingDTO {
-	Integer idDto;
+	Integer id;
 	@NotBlank(message = "moodysRating is mandatory")
-	String moodysRatingDto;
-	String sandPRatingDto;
-	String fitchRatingDto;
+	String moodysRating;
+	String sandPRating;
+	String fitchRating;
+	@NotNull(message = "orderNumber is mandatory")
 	@Digits(integer = 8, fraction = 2, message = "Must be a number!")
-	Integer orderNumberDto;
+	Integer orderNumber;
 
-	public RatingDTO(String moodysRatingDto, String sandPRatingDto, String fitchRatingDto, Integer orderNumberDto) {
+	public RatingDTO(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
 		super();
-		this.moodysRatingDto = moodysRatingDto;
-		this.sandPRatingDto = sandPRatingDto;
-		this.fitchRatingDto = fitchRatingDto;
-		this.orderNumberDto = orderNumberDto;
+		this.moodysRating = moodysRating;
+		this.sandPRating = sandPRating;
+		this.fitchRating = fitchRating;
+		this.orderNumber = orderNumber;
 	}
 
 }

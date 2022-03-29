@@ -16,11 +16,13 @@ xmlns:th="http://www.thymeleaf.org">
 		<div class="row">
 			<form action="#" th:action="@{/rating/update/{id}(id=${rating.id})}" th:object="${ratingDto}" method="post" class="form-horizontal" style="width: 100%">
 				<input th:field="*{moodysRating}" id="moodysRating" name="moodysRating" placeholder="moodysRating">
+				<p th:if="${#fields.hasErrors('moodysRating')}" th:errorclass="error" th:errors="*{moodysRating}" />
 			
 				<input th:field="*{sandPRating}" id="sandPRating" name="sandPRating" placeholder="sandPRating">
 				
 				<input th:field="*{fitchRating}" id="fitchRating" name="fitchRating" placeholder="fitchRating">
 				<input th:field="*{orderNumber}"  id="orderNumber" name="orderNumber" placeholder="orderNumber">
+				<p th:if="${#fields.hasErrors('orderNumber')}" th:errorclass="error" th:errors="*{orderNumber}" />
 
 
 				<td>

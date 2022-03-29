@@ -1,6 +1,7 @@
 package com.nnk.springboot.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.interfaces.IRatingService;
 import com.nnk.springboot.repositories.RatingRepository;
 import com.nnk.springboot.util.RatingMapper;
+
+import customExceptions.CustomBidNotFoundException;
 
 @Service
 public class RatingService implements IRatingService{
@@ -27,9 +30,10 @@ public class RatingService implements IRatingService{
 	}
 
 	@Override
-	public Rating saveRating(Rating rating) {
-		// TODO Auto-generated method stub
-		return ratingRepo.save(rating);
+	public Rating saveRating(RatingDTO ratingDto) {
+		Rating ratingToSave = new Rating();
+		rMapper.updateRatingByDTO(ratingDto, ratingToSave);;
+		return ratingRepo.save(ratingToSave);
 	}
 
 	@Override
@@ -46,8 +50,11 @@ public class RatingService implements IRatingService{
 
 	@Override
 	public Rating getById(Integer id) {
-		// TODO Auto-generated method stub
-		return ratingRepo.getById(id);
+		Optional<Rating>optional = ratingRepo.findById(id);
+		if (optional.isEmpty()) {
+			throw new CustomBidNotFoundException("Rating with id:"+id+" not found!");
+		}
+		return optional.get();
 	}
 
 }

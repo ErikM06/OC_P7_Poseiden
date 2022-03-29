@@ -1,6 +1,7 @@
 package com.nnk.springboot.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.interfaces.ITradeService;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.util.TradeMapper;
+
+import customExceptions.CustomBidNotFoundException;
 
 @Service
 public class TradeService implements ITradeService{
@@ -27,9 +30,11 @@ public class TradeService implements ITradeService{
 	}
 
 	@Override
-	public Trade saveTrade(Trade trade) {
+	public Trade saveTrade(TradeDTO tradeDto) {
 		// TODO Auto-generated method stub
-		return tradeRepo.save(trade);
+		Trade tradeToSave = new Trade();
+		tMapper.updateRatingByDTO(tradeDto, tradeToSave);
+		return tradeRepo.save(tradeToSave);
 	}
 
 	@Override
@@ -46,9 +51,12 @@ public class TradeService implements ITradeService{
 	}
 
 	@Override
-	public Trade getById(Integer id) {
-		// TODO Auto-generated method stub
-		return tradeRepo.getById(id);
+	public Trade getTradeById(Integer id) {
+		Optional<Trade>optional = tradeRepo.findById(id);
+		if (optional.isEmpty()) {
+			throw new CustomBidNotFoundException("trade with id :"+id+" not found!");
+		}
+		return optional.get();
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.nnk.springboot.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,8 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.interfaces.IBidListService;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.util.BidListMapper;
+
+import customExceptions.CustomBidNotFoundException;
 
 @Service
 public class BidListService implements IBidListService {
@@ -35,11 +38,11 @@ public class BidListService implements IBidListService {
 
 	@Override
 	public BidList uptadeBid(Integer id, BidListDTO bidDto) {
-		BidList bidToUpdate = bidListRepo.getById(id);
-		/*
-		 * bidToUpdate.setAccount(bid.getAccount()); bidToUpdate.setType(bid.getType());
-		 * bidToUpdate.setAskQuantity(bid.getAskQuantity());
-		 */
+		Optional<BidList>optional = bidListRepo.findById(id);
+		if (optional.isEmpty()) {
+			throw new CustomBidNotFoundException("BidList with id :"+id+" not found !");
+		}
+		BidList bidToUpdate = optional.get();
 		bMapper.updateBidListByBidListDTO(bidDto, bidToUpdate);
 		return bidListRepo.save(bidToUpdate);
 	}
@@ -51,8 +54,13 @@ public class BidListService implements IBidListService {
 
 	@Override
 	public BidList getById(Integer id) {
+		Optional<BidList>optional = bidListRepo.findById(id);
+		if (optional.isEmpty()) {
+			throw new CustomBidNotFoundException("BidList with id :"+id+" not found !");
+		}
 		// TODO Auto-generated method stub
-		return bidListRepo.getById(id);
+		return optional.get();
 	}
+	
 
 }

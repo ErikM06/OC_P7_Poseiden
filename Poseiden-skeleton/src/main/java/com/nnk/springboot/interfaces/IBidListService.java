@@ -17,4 +17,5 @@ public interface IBidListService {
 	public void deleteBid (Integer id);
 	
 	public BidList getById (Integer id);
+
 }

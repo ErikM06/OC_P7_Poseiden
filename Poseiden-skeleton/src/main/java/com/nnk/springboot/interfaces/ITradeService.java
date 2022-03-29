@@ -10,12 +10,12 @@ public interface ITradeService {
 	
 	public List<Trade> getAllTrade();
 
-	public Trade saveTrade(Trade rating);
+	public Trade saveTrade(TradeDTO tradeDto);
 
 	public Trade updateTrade(Integer id, TradeDTO tradeDto);
 
 	public void deleteTrade(Integer id);
 
-	public Trade getById(Integer id);
+	public Trade getTradeById(Integer id);
 
 }

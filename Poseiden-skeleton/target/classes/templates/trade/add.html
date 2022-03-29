@@ -14,10 +14,13 @@ xmlns:th="http://www.thymeleaf.org">
 		</div>
 
 		<div class="row">
-			<form action="#" th:action="@{/trade/validate}" th:object="${trade}" method="post" class="form-horizontal" style="width: 100%">
+			<form action="#" th:action="@{/trade/validate}" th:object="${tradeDto}" method="post" class="form-horizontal" style="width: 100%">
 				<input th:field="*{account}" id="account" name="account" placeholder="account">
+				<p th:if="${#fields.hasErrors('account')}" th:errorclass="error" th:errors="*{account}" />
 				<input th:field="*{type}" id="type" name="type" placeholder="type">
+				<p th:if="${#fields.hasErrors('type')}" th:errorclass="error" th:errors="*{type}" />
 				<input th:field="*{buyQuantity}" id="buyQuantity" name="buyQuantity" placeholder="buyQuantity">
+				<p th:if="${#fields.hasErrors('buyQuantity')}" th:errorclass="error" th:errors="*{buyQuantity}" />
 				<td>
 					<button name="Save" class="btn btn-primary" type="submit" >Save</button>
 					<button name="Cancel" class="btn btn-primary" th:href="@{/trade/list}" >Cancel</button>

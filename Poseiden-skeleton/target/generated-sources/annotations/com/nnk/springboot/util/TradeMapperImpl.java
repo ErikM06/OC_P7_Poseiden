@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-03-24T13:23:38+0100",
+    date = "2022-03-29T11:13:30+0200",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 11 (Oracle Corporation)"
 )
 @Component
@@ -24,6 +24,9 @@ public class TradeMapperImpl implements TradeMapper {
         }
         if ( tradeDto.getType() != null ) {
             trade.setType( tradeDto.getType() );
+        }
+        if ( tradeDto.getBuyQuantity() != null ) {
+            trade.setBuyQuantity( tradeDto.getBuyQuantity() );
         }
     }
 }

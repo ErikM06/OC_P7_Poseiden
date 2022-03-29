@@ -2,6 +2,9 @@ package com.nnk.springboot.domain;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.SelectBeforeUpdate;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +12,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "rulename")
 @NoArgsConstructor
 @Data
+@SelectBeforeUpdate
+@DynamicUpdate
 public class RuleName {
 
 	@Id
