@@ -5,6 +5,8 @@ import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.repositories.BidListRepository;
 import com.nnk.springboot.services.BidListService;
 
+import customExceptions.CustomIdNotFoundException;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -77,7 +79,7 @@ public class BidListServiceTest {
 
 	@Test
 	@Transactional
-	public void updateBidTest() {
+	public void updateBidTest() throws CustomIdNotFoundException {
 		bidListService.uptadeBid(bid.getBidListId(), bidDto);
 		BidList retrivedModifiedBid = bidListRepository.getById(bid.getBidListId());
 		assertThat(bidDto.getAccount().equals(retrivedModifiedBid.getAccount()));

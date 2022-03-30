@@ -62,10 +62,12 @@ public class BidListController {
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 
 		
-			model.addAttribute("bidList", iBidList.getById(id));
-		
-		//	model.addAttribute("error", e.getMessage());
-		
+			try {
+				model.addAttribute("bidList", iBidList.getById(id));
+			} catch (CustomIdNotFoundException e) {
+				// TODO Auto-generated catch block
+				
+			}
 		model.addAttribute("bidListDto", new BidListDTO());
 		return "bidList/update";
 	}
@@ -78,7 +80,12 @@ public class BidListController {
 			return "bidList/update";
 		}
 
-		iBidList.uptadeBid(id, bidListDto);
+		try {
+			iBidList.uptadeBid(id, bidListDto);
+		} catch (CustomIdNotFoundException e) {
+			// TODO Auto-generated catch block
+			model.addAttribute("error", e.getMessage());
+		}
 
 		return "redirect:/bidList/list";
 	}

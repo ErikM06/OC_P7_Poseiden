@@ -5,6 +5,8 @@ import java.util.List;
 import com.nnk.springboot.DTOs.CurvePointDTO;
 import com.nnk.springboot.domain.CurvePoint;
 
+import customExceptions.CustomIdNotFoundException;
+
 public interface ICurvePointService {
 	
 	public List<CurvePoint> getAllCurvePoint();
@@ -15,6 +17,6 @@ public interface ICurvePointService {
 	
 	public void deleteCurvePoint (Integer id);
 
-	public CurvePoint getCurvePointById(Integer id);
+	public CurvePoint getCurvePointById(Integer id) throws CustomIdNotFoundException;
 
 }

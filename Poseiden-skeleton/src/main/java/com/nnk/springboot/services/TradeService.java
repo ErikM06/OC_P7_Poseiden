@@ -51,7 +51,7 @@ public class TradeService implements ITradeService{
 	}
 
 	@Override
-	public Trade getTradeById(Integer id) {
+	public Trade getTradeById(Integer id) throws CustomIdNotFoundException {
 		Optional<Trade>optional = tradeRepo.findById(id);
 		if (optional.isEmpty()) {
 			throw new CustomIdNotFoundException("trade with id :"+id+" not found!");

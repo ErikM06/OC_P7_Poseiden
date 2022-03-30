@@ -5,6 +5,8 @@ import java.util.List;
 import com.nnk.springboot.DTOs.TradeDTO;
 import com.nnk.springboot.domain.Trade;
 
+import customExceptions.CustomIdNotFoundException;
+
 
 public interface ITradeService {
 	
@@ -16,6 +18,6 @@ public interface ITradeService {
 
 	public void deleteTrade(Integer id);
 
-	public Trade getTradeById(Integer id);
+	public Trade getTradeById(Integer id) throws CustomIdNotFoundException;
 
 }

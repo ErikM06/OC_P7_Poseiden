@@ -49,7 +49,7 @@ public class RatingService implements IRatingService{
 	}
 
 	@Override
-	public Rating getById(Integer id) {
+	public Rating getById(Integer id) throws CustomIdNotFoundException {
 		Optional<Rating>optional = ratingRepo.findById(id);
 		if (optional.isEmpty()) {
 			throw new CustomIdNotFoundException("Rating with id:"+id+" not found!");

@@ -45,7 +45,7 @@ public class CurvePointService implements ICurvePointService {
 		curvePointRepo.deleteById(id);
 	}
 	@Override
-	public CurvePoint getCurvePointById (Integer id) {
+	public CurvePoint getCurvePointById (Integer id) throws CustomIdNotFoundException {
 		Optional<CurvePoint>optional = curvePointRepo.findById(id);
 		if (optional.isEmpty()) {
 			throw new CustomIdNotFoundException("curvePoint with id :"+id+" not found!");

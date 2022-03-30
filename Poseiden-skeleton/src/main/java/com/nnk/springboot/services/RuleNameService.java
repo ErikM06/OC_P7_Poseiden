@@ -48,7 +48,7 @@ public class RuleNameService implements IRuleNameService{
 	}
 
 	@Override
-	public RuleName getRuleNameById(Integer id) {
+	public RuleName getRuleNameById(Integer id) throws CustomIdNotFoundException {
 		Optional<RuleName> optional = ruleNameRepository.findById(id);
 		if (optional.isEmpty()) {
 			throw new CustomIdNotFoundException("RuleName with id :"+id+" not found!");

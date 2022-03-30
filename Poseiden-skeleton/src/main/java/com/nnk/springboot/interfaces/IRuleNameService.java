@@ -5,6 +5,8 @@ import java.util.List;
 import com.nnk.springboot.DTOs.RuleNameDTO;
 import com.nnk.springboot.domain.RuleName;
 
+import customExceptions.CustomIdNotFoundException;
+
 public interface IRuleNameService {
 	
 public List<RuleName> getAllRuleName();
@@ -15,6 +17,6 @@ public List<RuleName> getAllRuleName();
 	
 	public void deleteRuleName(Integer id);
 	
-	public RuleName getRuleNameById (Integer id);
+	public RuleName getRuleNameById (Integer id) throws CustomIdNotFoundException;
 
 }

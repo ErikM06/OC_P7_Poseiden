@@ -36,7 +36,7 @@ public class BidListService implements IBidListService {
 	}
 
 	@Override
-	public BidList uptadeBid(Integer id, BidListDTO bidDto) {
+	public BidList uptadeBid(Integer id, BidListDTO bidDto) throws CustomIdNotFoundException {
 		Optional<BidList>optional = bidListRepo.findById(id);
 		if (optional.isEmpty()) {
 			throw new CustomIdNotFoundException("BidList with id :"+id+" not found !");
@@ -52,7 +52,7 @@ public class BidListService implements IBidListService {
 	}
 
 	@Override
-	public BidList getById(Integer id) {
+	public BidList getById(Integer id) throws CustomIdNotFoundException {
 		Optional<BidList>optional = bidListRepo.findById(id);
 		if (optional.isEmpty()) {
 			throw new CustomIdNotFoundException("BidList with id :"+id+" not found !");
