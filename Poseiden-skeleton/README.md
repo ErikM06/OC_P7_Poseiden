@@ -5,34 +5,30 @@
 2. Java 8
 3. Thymeleaf
 4. Bootstrap v.4.3.1
+4. Maven 4.0.0
 
-## Active env Profile to run test and app 
-With mvn active profil user : mvn clean package -P{@profile} to apply the @profile  to the app context
-@Profile the env profil
+## Installation
 
-## Spring properties
+1. Clone the repo
+<code>git clone https://github.com/ErikM06/OC_P7_Poseiden.git</code>
+
+2. Install mvn packages
+mvn install
+
+3. Set Oauth in Spring-properties with :
+
+CLIENT_ID=640267609947-jn2if3qk7m5avr2fldl4ed862h9kn37l.apps.googleusercontent.com
+CLIENT_SECRET=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
+
+4. Launch the app with the dev profile
+<code>java -jar -Dspring.profiles.active=dev application.jar</code>
+
+5. Login with :
+username : user
+passowrd : User1%2%3
+
+username : admin
+password : Admin1%2
 
 
-## Setup with Intellij IDE
-1. Create project from Initializr: File > New > project > Spring Initializr
-2. Add lib repository into pom.xml
-3. Add folders
-    - Source root: src/main/java
-    - View: src/main/resources
-    - Static: src/main/resource/static
-4. Create database with name "demo" as configuration in application.properties
-5. Run sql script to create table doc/data.sql
-
-## Implement a Feature
-1. Create mapping domain class and place in package com.nnk.springboot.domain
-2. Create repository class and place in package com.nnk.springboot.repositories
-3. Create controller class and place in package com.nnk.springboot.controllers
-4. Create view files and place in src/main/resource/templates
-
-## Write Unit Test
-1. Create unit test and place in package com.nnk.springboot in folder test > java
-
-## Security
-1. Create user service to load user from  database and place in package com.nnk.springboot.services
-2. Add configuration class and place in package com.nnk.springboot.config
 
