@@ -1,6 +1,6 @@
 package customExceptions;
 
-public class CustomIdNotFoundException extends RuntimeException{
+public class CustomIdNotFoundException extends Exception{
 	
 	/**
 	 * 

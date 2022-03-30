@@ -61,11 +61,11 @@ public class BidListController {
 	@GetMapping("/bidList/update/{id}")
 	public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 
-		try {
+		
 			model.addAttribute("bidList", iBidList.getById(id));
-		} catch (CustomIdNotFoundException e) {
-			model.addAttribute("error", e.getMessage());
-		}
+		
+		//	model.addAttribute("error", e.getMessage());
+		
 		model.addAttribute("bidListDto", new BidListDTO());
 		return "bidList/update";
 	}
